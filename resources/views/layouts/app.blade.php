@@ -7,7 +7,7 @@
     <title>@yield('title')</title>
     <script src="{{ asset('js/app.js') }}" defer></script>
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&family=Lobster+Two:wght@700&display=swap" rel="stylesheet">    
+	<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&family=Lobster+Two:wght@700&display=swap" rel="stylesheet">   
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>

@@ -14,7 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome', [
+    	'AppURLs' => json_encode([
+    		'domain' => config('app.url'),
+    		'images' => asset('images').'/',
+    		'icons' => asset('images/icons').'/',
+    	], true),
+    ]);
 });
 
 Auth::routes();

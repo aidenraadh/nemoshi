@@ -4,7 +4,7 @@ export function Button_1(props){
 	const BtnTag = props.tag;
 	return (
 		<>
-		<BtnTag className="btn_1" {...props.attr} {...props.events}>
+		<BtnTag className={'btn_1 '+props.color} {...props.attr} {...props.events}>
 			{props.text}
 		</BtnTag>
 		</>//

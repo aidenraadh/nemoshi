@@ -55,11 +55,11 @@ select{
 	flex-direction: column;
 }
 
-.rows_container.center{
+.rows_container.x_center{
 	justify-content: center;
 }
 
-.rows_container.align_center{
+.rows_container.y_center{
 	align-items: center;
 }
 
@@ -67,23 +67,23 @@ select{
 	display: flex;
 }
 
-.cols_container.left{
+.cols_container.x_start{
 	justify-content: flex-start;
 }
 
-.cols_container.right{
+.cols_container.x_end{
 	justify-content: flex-end;
 }
 
-.cols_container.center{
+.cols_container.x_center{
 	justify-content: center;
 }
 
-.cols_container.space_between{
+.cols_container.x_space_between{
 	justify-content: space-between;
 }
 
-.cols_container.align_center{
+.cols_container.y_center{
 	align-items: center;
 }
 
@@ -95,8 +95,246 @@ select{
 	font-weight: 400;
 	font-size: 2rem;
 	color: white;
+}
+
+.btn_1.orange{
 	background-color: #f16d07;
-} 
+}
+
+.btn_1.orange_gradient{
+	background: linear-gradient(to right, #eb883b, #f26900);
+}
+
+.Carousel{
+    width: 40rem;
+}
+
+.Carousel .body{
+    display: flex;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.Carousel .display, .Carousel .item{
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.navbar{
+	display: flex;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 0 1.8rem;
+	color: #FFFFFF;
+	background-color: #1b1b1b;
+	box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.4);
+}
+
+.navbarBrand{
+	display: inline-block;
+	padding: 1.2rem 0;
+	width: auto;
+	flex-shrink: 0;
+}
+
+.navbarBrand img{
+	width: 8rem;
+	height: auto;
+}
+
+.navbarLinks{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.navbarLinks ul{
+	display: flex;
+	list-style-type: none;
+}
+
+.navbarLinks .link{
+	display: inline-block;
+	padding: 1.8rem 2rem;
+	font-family: 'Barlow', sans-serif;
+	font-size: 1.6rem;
+	color: #FFFFFF;
+	transition: color 0.3s ease;
+}
+
+.navbarLinks .link:hover{
+	color: #f16d07;
+}
+
+.navbarLinks .dropdown{
+    position: relative;
+    display: inline-block;
+}
+
+.navbarLinks .dropdown .toggle{
+	display: flex;
+	align-items: center;
+	padding: 1.8rem 2rem;
+	font-family: 'Barlow', sans-serif;
+	font-weight: 400;	
+	font-size: 1.6rem;
+	color: #FFFFFF;
+	transition: color 0.3s ease;
+}
+
+.navbarLinks .dropdown .text{
+	display: inline-block;
+	margin-right: 0.8rem;
+}
+
+.navbarLinks .dropdown .arrow{
+	display: inline-block;
+	width: 1rem;
+	height: 1rem;
+	border: none;
+	border-right: 2px solid white;
+	border-bottom: 2px solid white;
+	transform: rotateZ(45deg);
+}
+
+.navbarLinks .dropdown .menu{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%; left: 0;
+    min-width: 20rem;
+    padding: 1.4rem 0;
+    border-top: 2px solid #f16d07;
+    background-color: #1b1b1b;
+    box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transition-property: opacity, transform;
+    transition-duration: 0.3s, 0.3s;
+    transform: translateY(4%);
+}
+
+.navbarLinks .dropdown .item > *{
+    display: inline-block;
+    padding: 1.2rem 1.2rem;
+    cursor: pointer;
+	font-family: 'Barlow', sans-serif;
+	font-weight: 500;
+    font-size: 1.5rem;
+    color: #FFFFFF;
+    transition-property: color, transform;
+    transition-duration: 0.2s, 0.2s;
+}
+
+.navbarLinks .dropdown .item:hover > *{
+    color: #f16d07;
+    transform: translateX(1%);
+}
+
+.navbarLinks .dropdown .toggle:focus ~ .menu{
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.navbarLinks .dropdown .menu:hover{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.navbarActions{
+	display: flex;
+	flex-direction: row;
+	flex-shrink: 0;
+	align-items: center;
+	justify-content: center;
+}
+
+.clsNavbar{
+	display: none;
+	padding-left: 2rem;
+	align-self: flex-start;
+	font-family: 'Barlow', sans-serif;
+	font-weight: 400;
+	font-size: 5rem;
+	color: #f16d07;
+}
+
+.opnNavbar{
+	display: none;
+	padding-left: 1.4rem;
+	margin-left: 1.4rem;
+	border-left: 1px solid white;
+}
+
+.opnNavbar span{
+	display: block;
+	margin: 0.3rem 0;
+	width: 3rem;
+	height: 3px;
+	border-radius: 4px;
+	background-color: #FFFFFF;
+}
+
+.menuGrid{
+	width: 78%;
+	height: auto;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 32% 32% 32%;
+	grid-column-gap: 2.6%;
+	grid-row-gap: 10.6%;
+}
+
+.menuGrid .menu{
+	display: flex;
+	min-height: 2rem;
+	align-items: center;
+	padding: 1rem;
+	border: 1px dashed #b4b4b4;
+	transition: border-color 0.3s ease;
+}
+
+.menuGrid .menu:hover{
+	border-color: #f16d07;
+}
+
+.menuGrid .img{
+	width: 10rem;
+	height: 10rem;
+	object-fit: cover;
+}
+
+.menuGrid .text{
+	padding-left: 1rem;
+	display: flex;
+	flex-direction: column;
+	font-family: 'Barlow', sans-serif;
+}
+
+.menuGrid .name{
+	font-size: 1.65rem;
+	font-weight: 600;
+	color: #363636;
+	margin-bottom: 1rem;
+}
+
+.menuGrid .details{
+	font-size: 1.6rem;
+	font-weight: 400;
+	color: #666666;
+	margin-bottom: 1rem;
+}
+
+.menuGrid .price{
+	font-size: 1.7rem;
+	font-weight: 600;
+	color: #f16d07;
+}
 
 @media only screen and (min-width: 1281px) {
   html{
@@ -108,4 +346,60 @@ select{
 	html{
 		font-size: calc(10px -  ( (1280px - 100vw) *  0.00138 ) );
 	}
+}
+
+@media only screen and (max-width: 1100px) {
+}
+
+@media only screen and (max-width: 1000px) {
+}
+
+@media only screen and (max-width: 900px){
+	.navbar{
+		justify-content: space-between;
+	}
+
+	.navbarLinks{
+		width: 50vw;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		position: fixed; top: 0; right: 0;
+		height: 100vh;
+		background-color: #1b1b1b;
+		transform: translateX(100%);
+		transition: transform 0.3s ease;
+	}
+
+	.navbarLinks.shown{
+		transform: translateX(0);
+	}
+
+	.navbarLinks ul{
+		display: block;
+		width: 100%;
+	}
+	.navbarActions{
+		flex-shrink: 1;
+	}
+	.opnNavbar{
+		display: inline-flex;
+		flex-direction: column;
+	}
+	.clsNavbar{
+		display: block;
+	}
 }	
+
+
+@media only screen and (max-width: 800px) {
+}
+
+@media only screen and (max-width: 700px) {
+}
+
+@media only screen and (max-width: 600px) {
+}
+
+@media only screen and (max-width: 500px) {
+}

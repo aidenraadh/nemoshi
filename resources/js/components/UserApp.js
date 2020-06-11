@@ -6,6 +6,6 @@ const App = document.getElementById('UserApp');
 
 export default function UserApp(props){
 	if(App.classList.contains('landing_view')){
-		return <LandingView />;
+		return <LandingView AppURLs = {props.AppURLs} />;
 	}
 }

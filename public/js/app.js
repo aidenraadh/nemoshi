@@ -65820,7 +65820,9 @@ __webpack_require__.r(__webpack_exports__);
 var App = document.getElementById('UserApp');
 function UserApp(props) {
   if (App.classList.contains('landing_view')) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_UserViews_LandingView_js__WEBPACK_IMPORTED_MODULE_1__["default"], null);
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_UserViews_LandingView_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      AppURLs: props.AppURLs
+    });
   }
 }
 
@@ -65839,18 +65841,132 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _reusables_Buttons_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../reusables/Buttons.js */ "./resources/js/components/reusables/Buttons.js");
+/* harmony import */ var _reusables_Sections_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../reusables/Sections.js */ "./resources/js/components/reusables/Sections.js");
+
 
 
 function LandingView(props) {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Buttons_js__WEBPACK_IMPORTED_MODULE_1__["Button_1"], {
-    tag: 'button',
-    text: 'Button',
-    attr: {
-      type: 'button'
-    }
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Sections_js__WEBPACK_IMPORTED_MODULE_2__["Navbar"], {
+    brandImgLink: props.AppURLs.icons + 'logo.png',
+    navbarLinks: [{
+      type: 'link',
+      data: {
+        attr: {
+          href: '#'
+        },
+        text: 'HOME'
+      }
+    }, {
+      type: 'link',
+      data: {
+        attr: {
+          href: '#'
+        },
+        text: 'ABOUT'
+      }
+    }, {
+      type: 'dropdown',
+      data: {
+        toggleText: 'SHOP',
+        items: [/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: "#"
+        }, "asd"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: "#"
+        }, "asd"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: "#"
+        }, "asd"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: "#"
+        }, "asd")]
+      }
+    }, {
+      type: 'link',
+      data: {
+        attr: {
+          href: '#'
+        },
+        text: 'BLOG'
+      }
+    }, {
+      type: 'link',
+      data: {
+        attr: {
+          href: '#'
+        },
+        text: 'CONTACT'
+      }
+    }],
+    navbarActions: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Buttons_js__WEBPACK_IMPORTED_MODULE_1__["Button_1"], {
+      tag: 'button',
+      color: 'orange',
+      text: 'Book now',
+      attr: {
+        style: {
+          fontSize: '1.65rem'
+        },
+        type: 'button'
+      }
+    })
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Sections_js__WEBPACK_IMPORTED_MODULE_2__["MenuGrid"], {
+    menus: [{
+      img: props.AppURLs.images + 'bg_10.jpg',
+      name: 'Grilled American Fillet',
+      details: 'Red peppers, roasted garlic, lemon slices.',
+      price: '$45.00'
+    }, {
+      img: props.AppURLs.images + 'bg_1.jpg',
+      name: 'Grilled American Fillet',
+      details: 'Red peppers, roasted garlic, lemon slices.',
+      price: '$45.00'
+    }, {
+      img: props.AppURLs.images + 'bg_2.jpg',
+      name: 'Grilled American Fillet',
+      details: 'Red peppers, roasted garlic, lemon slices.',
+      price: '$45.00'
+    }, {
+      img: props.AppURLs.images + 'bg_3.jpg',
+      name: 'Grilled American Fillet',
+      details: 'Red peppers, roasted garlic, lemon slices.',
+      price: '$45.00'
+    }, {
+      img: props.AppURLs.images + 'bg_4.jpg',
+      name: 'Grilled American Fillet',
+      details: 'Red peppers, roasted garlic, lemon slices.',
+      price: '$45.00'
+    }]
   })) //
   ;
 }
+/*
+		<MenuGrid
+			menus = {[
+				{
+					img: props.AppURLs.images+'bg_10.jpg',
+					name: 'Grilled American Fillet',
+					price: '$45.00',
+				},
+				{
+					img: props.AppURLs.images+'bg_1.jpg',
+					name: 'Grilled American Fillet',
+					price: '$45.00',
+				},
+				{
+					img: props.AppURLs.images+'bg_2.jpg',
+					name: 'Grilled American Fillet',
+					price: '$45.00',
+				},
+				{
+					img: props.AppURLs.images+'bg_3.jpg',
+					name: 'Grilled American Fillet',
+					price: '$45.00',
+				},
+				{
+					img: props.AppURLs.images+'bg_4.jpg',
+					name: 'Grilled American Fillet',
+					price: '$45.00',
+				},																
+			]}
+		/>
+*/
 
 /***/ }),
 
@@ -65871,9 +65987,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+var AppURLs = JSON.parse(document.getElementById('AppURLs').innerHTML);
 
 if (document.getElementById('UserApp')) {
-  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_UserApp_js__WEBPACK_IMPORTED_MODULE_2__["default"], null), document.getElementById('UserApp'));
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_UserApp_js__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    AppURLs: AppURLs
+  }), document.getElementById('UserApp'));
 }
 
 /***/ }),
@@ -65897,12 +66016,208 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function Button_1(props) {
   var BtnTag = props.tag;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(BtnTag, _extends({
-    className: "btn_1"
+    className: 'btn_1 ' + props.color
   }, props.attr, props.events), props.text)) //
   ;
 }
 function Button_2(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null)) //
+  ;
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/reusables/Sections.js":
+/*!*******************************************************!*\
+  !*** ./resources/js/components/reusables/Sections.js ***!
+  \*******************************************************/
+/*! exports provided: Navbar, MenuGrid */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Navbar", function() { return Navbar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenuGrid", function() { return MenuGrid; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+function NavbarDropdown(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "dropdown"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "toggle",
+    type: "button"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text"
+  }, props.toggleText), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "arrow"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "menu"
+  }, props.items.map(function (item, idx) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      key: idx,
+      className: "item"
+    }, item);
+  })))) //
+  ;
+}
+
+var Navbar = /*#__PURE__*/function (_React$Component) {
+  _inherits(Navbar, _React$Component);
+
+  var _super = _createSuper(Navbar);
+
+  function Navbar(props) {
+    var _this;
+
+    _classCallCheck(this, Navbar);
+
+    _this = _super.call(this, props);
+    _this.state = {
+      navbarShown: false
+    };
+    _this.toggleNavbar = _this.toggleNavbar.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(Navbar, [{
+    key: "toggleNavbar",
+    value: function toggleNavbar(navbarShown) {
+      this.setState({
+        navbarShown: navbarShown
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+        className: "navbar"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "navbarBrand",
+        href: "#"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: this.props.brandImgLink
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: 'navbarLinks ' + (this.state.navbarShown ? 'shown' : '')
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "button",
+        className: "clsNavbar",
+        onClick: function onClick(e) {
+          return _this2.toggleNavbar(false);
+        }
+      }, "\xD7"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.props.navbarLinks.map(function (link, idx) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          key: idx
+        }, link.type === 'dropdown' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavbarDropdown, {
+          toggleText: link.data.toggleText,
+          items: link.data.items
+        }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", _extends({
+          className: "link"
+        }, link.data.attr), link.data.text));
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "navbarActions"
+      }, this.props.navbarActions, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "opnNavbar",
+        onClick: function onClick(e) {
+          return _this2.toggleNavbar(true);
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null))));
+    }
+  }]);
+
+  return Navbar;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+/*
+<li><a className="link" href="#">HOME</a></li>
+<li><a className="link" href="#">MENU</a></li>
+<li>
+	<span className="dropdown">
+		<button className="toggle" type="button">
+			<span className="text">SHOP</span><span className="arrow"></span>
+		</button>
+		<ul className="menu">
+			<li className="item">asd</li>
+			<li className="item">asd</li>
+			<li className="item">asd</li>
+		</ul>
+	</span>
+</li>
+<li>
+	<a className="link" href="#">BLOG</a>
+</li>
+<li>
+	<a className="link dropdown" href="#">CONTACT</a>
+</li>
+*/
+
+/*
+|--------------------------------------------------------------------------
+| Menu Grid
+|--------------------------------------------------------------------------
+|
+| --- Properties ---
+| ### menus ###
+| an array of object each element defines the menu images, and info
+|
+| Structure: 
+| menus = [
+| 	{
+|		img: (str)menu_image_link,
+|		name: (str/JSX)menu_name,
+|		details: (str/JSX)menu_details,
+| 		price: (str/JSX)menu_price,
+|	},
+| 	...
+| ]
+*/
+
+function MenuGrid(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "menuGrid"
+  }, props.menus.map(function (menu, idx) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("article", {
+      className: "menu",
+      key: idx
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      className: "img",
+      src: menu.img
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "text"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", {
+      className: "name"
+    }, menu.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "details"
+    }, menu.details), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "price"
+    }, menu.price)));
+  }))) //
   ;
 }
 
