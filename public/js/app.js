@@ -65847,7 +65847,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function LandingView(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Sections_js__WEBPACK_IMPORTED_MODULE_2__["Navbar"], {
-    brandImgLink: props.AppURLs.icons + 'logo.png',
+    brandImg: props.AppURLs.icons + 'logo.png',
     navbarLinks: [{
       type: 'link',
       data: {
@@ -65906,32 +65906,25 @@ function LandingView(props) {
         type: 'button'
       }
     })
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Sections_js__WEBPACK_IMPORTED_MODULE_2__["MenuGrid"], {
-    menus: [{
-      img: props.AppURLs.images + 'bg_10.jpg',
-      name: 'Grilled American Fillet',
-      details: 'Red peppers, roasted garlic, lemon slices.',
-      price: '$45.00'
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Sections_js__WEBPACK_IMPORTED_MODULE_2__["Cart"], {
+    cartData: [{
+      menu_id: '1',
+      menu_img: props.AppURLs.images + 'bg_1.jpg',
+      menu_name: 'asdf',
+      menu_price: '13000',
+      menu_quantity: 2
     }, {
-      img: props.AppURLs.images + 'bg_1.jpg',
-      name: 'Grilled American Fillet',
-      details: 'Red peppers, roasted garlic, lemon slices.',
-      price: '$45.00'
+      menu_id: '2',
+      menu_img: props.AppURLs.images + 'bg_2.jpg',
+      menu_name: 'qwer',
+      menu_price: '15000',
+      menu_quantity: 1
     }, {
-      img: props.AppURLs.images + 'bg_2.jpg',
-      name: 'Grilled American Fillet',
-      details: 'Red peppers, roasted garlic, lemon slices.',
-      price: '$45.00'
-    }, {
-      img: props.AppURLs.images + 'bg_3.jpg',
-      name: 'Grilled American Fillet',
-      details: 'Red peppers, roasted garlic, lemon slices.',
-      price: '$45.00'
-    }, {
-      img: props.AppURLs.images + 'bg_4.jpg',
-      name: 'Grilled American Fillet',
-      details: 'Red peppers, roasted garlic, lemon slices.',
-      price: '$45.00'
+      menu_id: '3',
+      menu_img: props.AppURLs.images + 'bg_3.jpg',
+      menu_name: 'zxcv',
+      menu_price: '11000',
+      menu_quantity: 4
     }]
   })) //
   ;
@@ -66031,13 +66024,14 @@ function Button_2(props) {
 /*!*******************************************************!*\
   !*** ./resources/js/components/reusables/Sections.js ***!
   \*******************************************************/
-/*! exports provided: Navbar, MenuGrid */
+/*! exports provided: Navbar, MenuGrid, Cart */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Navbar", function() { return Navbar; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenuGrid", function() { return MenuGrid; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Cart", function() { return Cart; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -66123,7 +66117,7 @@ var Navbar = /*#__PURE__*/function (_React$Component) {
         className: "navbarBrand",
         href: "#"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: this.props.brandImgLink
+        src: this.props.brandImg
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: 'navbarLinks ' + (this.state.navbarShown ? 'shown' : '')
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -66154,29 +66148,6 @@ var Navbar = /*#__PURE__*/function (_React$Component) {
 
   return Navbar;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
-/*
-<li><a className="link" href="#">HOME</a></li>
-<li><a className="link" href="#">MENU</a></li>
-<li>
-	<span className="dropdown">
-		<button className="toggle" type="button">
-			<span className="text">SHOP</span><span className="arrow"></span>
-		</button>
-		<ul className="menu">
-			<li className="item">asd</li>
-			<li className="item">asd</li>
-			<li className="item">asd</li>
-		</ul>
-	</span>
-</li>
-<li>
-	<a className="link" href="#">BLOG</a>
-</li>
-<li>
-	<a className="link dropdown" href="#">CONTACT</a>
-</li>
-*/
-
 /*
 |--------------------------------------------------------------------------
 | Menu Grid
@@ -66220,6 +66191,102 @@ function MenuGrid(props) {
   }))) //
   ;
 }
+var Cart = /*#__PURE__*/function (_React$Component2) {
+  _inherits(Cart, _React$Component2);
+
+  var _super2 = _createSuper(Cart);
+
+  function Cart(props) {
+    var _this3;
+
+    _classCallCheck(this, Cart);
+
+    _this3 = _super2.call(this, props);
+    _this3.state = {
+      cartData: _this3.props.cartData
+    };
+    _this3.toggleQuantity = _this3.toggleQuantity.bind(_assertThisInitialized(_this3));
+    return _this3;
+  }
+
+  _createClass(Cart, [{
+    key: "toggleQuantity",
+    value: function toggleQuantity(add, menu_id) {
+      if (add) {
+        this.setState(function (state) {
+          var newCartData = state.cartData;
+          newCartData.forEach(function (cart, idx) {
+            if (cart.menu_id === menu_id) {
+              newCartData[idx].menu_quantity += 1;
+            }
+          });
+          return {
+            cartData: newCartData
+          };
+        });
+      } else {
+        this.setState(function (state) {
+          var newCartData = state.cartData;
+          newCartData.forEach(function (cart, idx) {
+            if (cart.menu_id === menu_id) {
+              newCartData[idx].menu_quantity = newCartData[idx].menu_quantity === 0 ? 0 : newCartData[idx].menu_quantity - 1;
+            }
+          });
+          return {
+            cartData: newCartData
+          };
+        });
+      }
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this4 = this;
+
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "cart"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "MENU"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "UNIT PRICE"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "QUANTITY"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "TOTAL"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, this.state.cartData.map(function (cart, idx) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
+          key: idx
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+          className: "menu"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: cart.menu_img
+        }), cart.menu_name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+          className: "unitPrice"
+        }, cart.menu_price), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+          className: "quantity"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: "qt",
+          style: {
+            order: '2'
+          }
+        }, cart.menu_quantity), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          className: "qtBtn",
+          style: {
+            order: '3'
+          },
+          onClick: function onClick() {
+            return _this4.toggleQuantity(true, cart.menu_id);
+          }
+        }, "+"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          className: "qtBtn",
+          style: {
+            order: '1'
+          },
+          onClick: function onClick() {
+            return _this4.toggleQuantity(false, cart.menu_id);
+          }
+        }, "-"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+          className: "total"
+        }, cart.menu_quantity * cart.menu_price));
+      }))))) //
+      ;
+    }
+  }]);
+
+  return Cart;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /***/ }),
 

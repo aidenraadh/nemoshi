@@ -40,7 +40,7 @@ export class Navbar extends React.Component{
 		return (
 			<nav className="navbar">
 				<a className="navbarBrand" href="#">
-					<img src={this.props.brandImgLink} />
+					<img src={this.props.brandImg} />
 				</a>
 				<div className={'navbarLinks '+(this.state.navbarShown ? 'shown' : '')}>
 					<button type="button" className="clsNavbar" onClick={(e) => this.toggleNavbar(false)}>
@@ -74,30 +74,6 @@ export class Navbar extends React.Component{
 		);
 	}
 }
-
-
-/*
-<li><a className="link" href="#">HOME</a></li>
-<li><a className="link" href="#">MENU</a></li>
-<li>
-	<span className="dropdown">
-		<button className="toggle" type="button">
-			<span className="text">SHOP</span><span className="arrow"></span>
-		</button>
-		<ul className="menu">
-			<li className="item">asd</li>
-			<li className="item">asd</li>
-			<li className="item">asd</li>
-		</ul>
-	</span>
-</li>
-<li>
-	<a className="link" href="#">BLOG</a>
-</li>
-<li>
-	<a className="link dropdown" href="#">CONTACT</a>
-</li>
-*/
 
 /*
 |--------------------------------------------------------------------------
@@ -143,4 +119,93 @@ export function MenuGrid(props){
 		</div>
 		</>//
 	);
+}
+
+export class Cart extends React.Component{
+	constructor(props){
+		super(props)
+		this.state = {
+			cartData: this.props.cartData
+		};
+
+		this.toggleQuantity = this.toggleQuantity.bind(this)
+	}
+
+	toggleQuantity(add, menu_id){
+		if(add){
+			this.setState((state) => {
+				let newCartData = state.cartData;
+				newCartData.forEach((cart, idx) => {
+					if(cart.menu_id === menu_id){
+						newCartData[idx].menu_quantity += 1;
+					}
+				});
+				return {cartData: newCartData};
+			});
+		}
+		else{
+			this.setState((state) => {
+				let newCartData = state.cartData;
+				newCartData.forEach((cart, idx) => {
+					if(cart.menu_id === menu_id){
+						newCartData[idx].menu_quantity = (
+							newCartData[idx].menu_quantity === 0 ?
+							0 : (newCartData[idx].menu_quantity-1)
+						);
+					}
+				});
+				return {cartData: newCartData};
+			});			
+		}
+	}
+
+	render(){
+		return (
+			<>
+			<div className="cart">
+				<table>
+					<thead>
+						<tr>
+							<th>MENU</th>
+							<th>UNIT PRICE</th>
+							<th>QUANTITY</th>
+							<th>TOTAL</th>
+						</tr>
+					</thead>
+					<tbody>
+					{this.state.cartData.map((cart, idx) => (
+
+						<tr key={idx}>
+							<td className="menu">
+								<span>
+									<img src={cart.menu_img} />
+									{cart.menu_name}				
+								</span>
+							</td>
+							<td className="unitPrice">{cart.menu_price}</td>
+							<td className="quantity">
+								<span>
+									<span className="qt" style={{order: '2'}}>{cart.menu_quantity}</span>
+									<button className="qtBtn" style={{order: '3'}}
+										onClick={()=>this.toggleQuantity(true, cart.menu_id)}
+									>
+									+
+									</button>
+									<button className="qtBtn" style={{order: '1'}} 
+										onClick={()=>this.toggleQuantity(false, cart.menu_id)}
+									>
+									-
+									</button>
+								</span>
+							</td>
+							<td className="total">{cart.menu_quantity * cart.menu_price}</td>
+						</tr>
+
+					))}
+					</tbody>
+				</table>
+			</div>			
+			</>//
+		);
+	}
 }
