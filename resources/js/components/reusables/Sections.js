@@ -109,8 +109,13 @@ export function MenuGrid(props){
 					<div className="details">
 						{menu.details}
 					</div>
-					<div className="price">
-						{menu.price}
+					<div className="price_quantity">
+						<span className="price">{menu.price}</span>
+						<span className="quantity">
+							<span style={{order: '2'}}>0</span>
+							<button type="button" style={{order: '3'}}>+</button>
+							<button type="button" style={{order: '1'}}>-</button>
+						</span>
 					</div>
 				</div>
 			</article>

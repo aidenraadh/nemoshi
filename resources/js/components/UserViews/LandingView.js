@@ -9,7 +9,7 @@ export default function LandingView(props){
 			brandImg = {props.AppURLs.icons+'logo.png'}
 			navbarLinks = {[
 				{type: 'link', data:{
-					attr: {href: '#'}, text: 'HOME'
+					attr: {href: props.AppURLs.domain}, text: 'HOME'
 				}},
 				{type: 'link', data:{
 					attr: {href: '#'}, text: 'ABOUT'
@@ -43,6 +43,69 @@ export default function LandingView(props){
 				/>
 			}
 		/>
+		<div style={{marginBottom: '20rem'}}>
+		<MenuGrid
+			menus = {[
+				{
+					img: props.AppURLs.images+'bg_10.jpg',
+					name: 'Grilled American Fillet',
+					details: 'Some shit with some shit. Some shit with some shit. Some shit with some shit.',
+					price: '$45.00',
+				},
+				{
+					img: props.AppURLs.images+'bg_1.jpg',
+					name: 'Grilled American Fillet',
+					details: 'Some shit with some shit. Some shit with some shit. Some shit with some shit.',
+					price: '$45.00',
+				},
+				{
+					img: props.AppURLs.images+'bg_2.jpg',
+					name: 'Grilled American Fillet',
+					details: 'Some shit with some shit. Some shit with some shit. Some shit with some shit.',
+					price: '$45.00',
+				},
+				{
+					img: props.AppURLs.images+'bg_3.jpg',
+					name: 'Grilled American Fillet',
+					details: 'Some shit with some shit. Some shit with some shit. Some shit with some shit.',
+					price: '$45.00',
+				},
+				{
+					img: props.AppURLs.images+'bg_4.jpg',
+					name: 'Grilled American Fillet',
+					details: 'Some shit with some shit. Some shit with some shit. Some shit with some shit.',
+					price: '$45.00',
+				},																
+			]}
+		/>		
+		</div>
+		<div style={{marginBottom: '20rem'}}>
+		<Cart
+			cartData = {[
+				{
+					menu_id: '1', menu_img: props.AppURLs.images+'bg_1.jpg',
+					menu_name: 'asdf', menu_price: '13000', menu_quantity: 2
+				},
+				{
+					menu_id: '2', menu_img: props.AppURLs.images+'bg_2.jpg',
+					menu_name: 'qwer', menu_price: '15000', menu_quantity: 1
+				},
+				{
+					menu_id: '3', menu_img: props.AppURLs.images+'bg_3.jpg',
+					menu_name: 'zxcv', menu_price: '11000', menu_quantity: 4
+				},								
+			]}
+		/>		
+		</div>	
+		</>//
+	);
+}
+
+/*
+
+*/
+
+/*
 		<Cart
 			cartData = {[
 				{
@@ -59,38 +122,8 @@ export default function LandingView(props){
 				},								
 			]}
 		/>
-		</>//
-	);
-}
+*/
 
 /*
-		<MenuGrid
-			menus = {[
-				{
-					img: props.AppURLs.images+'bg_10.jpg',
-					name: 'Grilled American Fillet',
-					price: '$45.00',
-				},
-				{
-					img: props.AppURLs.images+'bg_1.jpg',
-					name: 'Grilled American Fillet',
-					price: '$45.00',
-				},
-				{
-					img: props.AppURLs.images+'bg_2.jpg',
-					name: 'Grilled American Fillet',
-					price: '$45.00',
-				},
-				{
-					img: props.AppURLs.images+'bg_3.jpg',
-					name: 'Grilled American Fillet',
-					price: '$45.00',
-				},
-				{
-					img: props.AppURLs.images+'bg_4.jpg',
-					name: 'Grilled American Fillet',
-					price: '$45.00',
-				},																
-			]}
-		/>
+
 */

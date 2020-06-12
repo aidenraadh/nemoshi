@@ -65852,7 +65852,7 @@ function LandingView(props) {
       type: 'link',
       data: {
         attr: {
-          href: '#'
+          href: props.AppURLs.domain
         },
         text: 'HOME'
       }
@@ -65906,7 +65906,42 @@ function LandingView(props) {
         type: 'button'
       }
     })
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Sections_js__WEBPACK_IMPORTED_MODULE_2__["Cart"], {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    style: {
+      marginBottom: '20rem'
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Sections_js__WEBPACK_IMPORTED_MODULE_2__["MenuGrid"], {
+    menus: [{
+      img: props.AppURLs.images + 'bg_10.jpg',
+      name: 'Grilled American Fillet',
+      details: 'Some shit with some shit. Some shit with some shit. Some shit with some shit.',
+      price: '$45.00'
+    }, {
+      img: props.AppURLs.images + 'bg_1.jpg',
+      name: 'Grilled American Fillet',
+      details: 'Some shit with some shit. Some shit with some shit. Some shit with some shit.',
+      price: '$45.00'
+    }, {
+      img: props.AppURLs.images + 'bg_2.jpg',
+      name: 'Grilled American Fillet',
+      details: 'Some shit with some shit. Some shit with some shit. Some shit with some shit.',
+      price: '$45.00'
+    }, {
+      img: props.AppURLs.images + 'bg_3.jpg',
+      name: 'Grilled American Fillet',
+      details: 'Some shit with some shit. Some shit with some shit. Some shit with some shit.',
+      price: '$45.00'
+    }, {
+      img: props.AppURLs.images + 'bg_4.jpg',
+      name: 'Grilled American Fillet',
+      details: 'Some shit with some shit. Some shit with some shit. Some shit with some shit.',
+      price: '$45.00'
+    }]
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    style: {
+      marginBottom: '20rem'
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Sections_js__WEBPACK_IMPORTED_MODULE_2__["Cart"], {
     cartData: [{
       menu_id: '1',
       menu_img: props.AppURLs.images + 'bg_1.jpg',
@@ -65926,39 +65961,34 @@ function LandingView(props) {
       menu_price: '11000',
       menu_quantity: 4
     }]
-  })) //
+  }))) //
   ;
 }
 /*
-		<MenuGrid
-			menus = {[
+
+*/
+
+/*
+		<Cart
+			cartData = {[
 				{
-					img: props.AppURLs.images+'bg_10.jpg',
-					name: 'Grilled American Fillet',
-					price: '$45.00',
+					menu_id: '1', menu_img: props.AppURLs.images+'bg_1.jpg',
+					menu_name: 'asdf', menu_price: '13000', menu_quantity: 2
 				},
 				{
-					img: props.AppURLs.images+'bg_1.jpg',
-					name: 'Grilled American Fillet',
-					price: '$45.00',
+					menu_id: '2', menu_img: props.AppURLs.images+'bg_2.jpg',
+					menu_name: 'qwer', menu_price: '15000', menu_quantity: 1
 				},
 				{
-					img: props.AppURLs.images+'bg_2.jpg',
-					name: 'Grilled American Fillet',
-					price: '$45.00',
-				},
-				{
-					img: props.AppURLs.images+'bg_3.jpg',
-					name: 'Grilled American Fillet',
-					price: '$45.00',
-				},
-				{
-					img: props.AppURLs.images+'bg_4.jpg',
-					name: 'Grilled American Fillet',
-					price: '$45.00',
-				},																
+					menu_id: '3', menu_img: props.AppURLs.images+'bg_3.jpg',
+					menu_name: 'zxcv', menu_price: '11000', menu_quantity: 4
+				},								
 			]}
 		/>
+*/
+
+/*
+
 */
 
 /***/ }),
@@ -66186,8 +66216,26 @@ function MenuGrid(props) {
     }, menu.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "details"
     }, menu.details), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "price_quantity"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
       className: "price"
-    }, menu.price)));
+    }, menu.price), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "quantity"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      style: {
+        order: '2'
+      }
+    }, "0"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      type: "button",
+      style: {
+        order: '3'
+      }
+    }, "+"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      type: "button",
+      style: {
+        order: '1'
+      }
+    }, "-")))));
   }))) //
   ;
 }
