@@ -9,4 +9,5 @@
 
 <script type="application/json" id="AppURLs"><?= $AppURLs ?></script>
 
+
 @endsection

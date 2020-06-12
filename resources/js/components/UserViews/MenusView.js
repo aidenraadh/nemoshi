@@ -1,8 +1,16 @@
 import React from 'react';
 import {Button_1} from './../reusables/Buttons.js'
-import {Navbar, MenuGrid, Cart} from './../reusables/Sections.js'
+import {Navbar, MenuGrid} from './../reusables/Sections.js'
 
-export default function LandingView(props){
+export default function MenusView(props){
+
+	let menusImg = {};
+
+	props.MenusImgPath.forEach((path) => {
+		let splitted = path.split('/');
+		menusImg[ splitted[1] ] = splitted[2];
+	});
+
 	return (
 		<>
 		<Navbar
@@ -45,6 +53,47 @@ export default function LandingView(props){
 		/>
 		<div style={{marginBottom: '20rem'}}>
 		<MenuGrid
+			menus = {props.Menus.map((menu, idx) => (
+				{
+					img: props.AppURLs.menusImg+menu.id+'/'+menusImg[menu.id],
+					name: menu.name,
+					details: menu.description,
+					price: 'Rp. '+(menu.price/1000)+'k',
+				}
+			))}
+			addOrRemoveMenuURL = {props.AppURLs.addOrRemoveMenu}
+		/>		
+		</div>		
+		</>//
+	);
+}
+
+/*
+
+*/
+
+/*
+		<Cart
+			cartData = {[
+				{
+					menu_id: '1', menu_img: props.AppURLs.images+'bg_1.jpg',
+					menu_name: 'asdf', menu_price: '13000', menu_quantity: 2
+				},
+				{
+					menu_id: '2', menu_img: props.AppURLs.images+'bg_2.jpg',
+					menu_name: 'qwer', menu_price: '15000', menu_quantity: 1
+				},
+				{
+					menu_id: '3', menu_img: props.AppURLs.images+'bg_3.jpg',
+					menu_name: 'zxcv', menu_price: '11000', menu_quantity: 4
+				},								
+			]}
+		/>
+*/
+
+/*
+		<div style={{marginBottom: '20rem'}}>
+		<MenuGrid
 			menus = {[
 				{
 					img: props.AppURLs.images+'bg_10.jpg',
@@ -79,51 +128,4 @@ export default function LandingView(props){
 			]}
 		/>		
 		</div>
-		<div style={{marginBottom: '20rem'}}>
-		<Cart
-			cartData = {[
-				{
-					menu_id: '1', menu_img: props.AppURLs.images+'bg_1.jpg',
-					menu_name: 'asdf', menu_price: '13000', menu_quantity: 2
-				},
-				{
-					menu_id: '2', menu_img: props.AppURLs.images+'bg_2.jpg',
-					menu_name: 'qwer', menu_price: '15000', menu_quantity: 1
-				},
-				{
-					menu_id: '3', menu_img: props.AppURLs.images+'bg_3.jpg',
-					menu_name: 'zxcv', menu_price: '11000', menu_quantity: 4
-				},								
-			]}
-		/>		
-		</div>	
-		</>//
-	);
-}
-
-/*
-
-*/
-
-/*
-		<Cart
-			cartData = {[
-				{
-					menu_id: '1', menu_img: props.AppURLs.images+'bg_1.jpg',
-					menu_name: 'asdf', menu_price: '13000', menu_quantity: 2
-				},
-				{
-					menu_id: '2', menu_img: props.AppURLs.images+'bg_2.jpg',
-					menu_name: 'qwer', menu_price: '15000', menu_quantity: 1
-				},
-				{
-					menu_id: '3', menu_img: props.AppURLs.images+'bg_3.jpg',
-					menu_name: 'zxcv', menu_price: '11000', menu_quantity: 4
-				},								
-			]}
-		/>
-*/
-
-/*
-
 */

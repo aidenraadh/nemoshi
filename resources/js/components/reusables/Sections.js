@@ -1,4 +1,5 @@
 import React from 'react';
+import {AJAXPostRequest} from './../reusables/AJAXRequest.js';
 
 function NavbarDropdown(props){
 	return (
@@ -96,34 +97,58 @@ export class Navbar extends React.Component{
 | ]
 */
 
-export function MenuGrid(props){
-	return (
-		<>
-		<div className="menuGrid">
-		{props.menus.map((menu, idx) => (
+export class MenuGrid extends React.Component{
+	constructor(props){
+		super(props);
 
-			<article className="menu" key={idx}>
-				<img className="img" src={menu.img} />
-				<div className="text">
-					<h6 className="name">{menu.name}</h6>
-					<div className="details">
-						{menu.details}
-					</div>
-					<div className="price_quantity">
-						<span className="price">{menu.price}</span>
-						<span className="quantity">
-							<span style={{order: '2'}}>0</span>
-							<button type="button" style={{order: '3'}}>+</button>
-							<button type="button" style={{order: '1'}}>-</button>
-						</span>
-					</div>
-				</div>
-			</article>
+		this.addRemoveMenu = this.addRemoveMenu.bind(this);
+	}
 
-		))}
-		</div>
-		</>//
-	);
+	addRemoveMenu(menu_id, action){
+		console.log('asd');
+		AJAXPostRequest(
+			'menu_id='+menu_id+'&'+'action='+action,
+			this.props.addOrRemoveMenuURL
+		);		
+	}
+
+	render(){
+		return (
+			<>
+			<div className="menuGrid">
+			{this.props.menus.map((menu, idx) => (
+	
+				<article className="menu" key={idx}>
+					<img className="img" src={menu.img} />
+					<div className="text">
+						<h6 className="name">{menu.name}</h6>
+						<div className="details">
+							{menu.details}
+						</div>
+						<div className="price_quantity">
+							<span className="price">{menu.price}</span>
+							<span className="quantity">
+								<span style={{order: '2'}}>0</span>
+								<button type="button" style={{order: '3'}}
+									onClick={() => this.addRemoveMenu(menu.id, 'add')}
+								>
+									+
+								</button>
+								<button type="button" style={{order: '1'}}
+									onClick={() => this.addRemoveMenu(menu.id, 'remove')}
+								>
+									-
+								</button>
+							</span>
+						</div>
+					</div>
+				</article>
+	
+			))}
+			</div>
+			</>//
+		);		
+	}
 }
 
 export class Cart extends React.Component{

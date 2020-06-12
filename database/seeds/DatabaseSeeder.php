@@ -11,6 +11,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UserSeeder::class);
+        DB::table('menus')->insert([
+            'name' => Str::random(15),
+
+            'password' => Hash::make('password'),
+        ]);
     }
 }
+

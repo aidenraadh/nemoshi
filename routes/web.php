@@ -25,4 +25,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/test', 'TestController@test');
+
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/menus', 'MenusController@getMenus');
+Route::post('/menus/toggle', 'MenusController@getMenus');
+
