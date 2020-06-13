@@ -65816,6 +65816,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _UserViews_LandingView_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./UserViews/LandingView.js */ "./resources/js/components/UserViews/LandingView.js");
 /* harmony import */ var _UserViews_MenusView_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./UserViews/MenusView.js */ "./resources/js/components/UserViews/MenusView.js");
+/* harmony import */ var _UserViews_CartView_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./UserViews/CartView.js */ "./resources/js/components/UserViews/CartView.js");
+
 
 
 
@@ -65828,11 +65830,228 @@ function UserApp(props) {
   } else if (App.classList.contains('menus_view')) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_UserViews_MenusView_js__WEBPACK_IMPORTED_MODULE_2__["default"], {
       AppURLs: props.AppURLs,
-      Menus: JSON.parse(document.getElementById('Menus').innerHTML),
-      MenusImgPath: JSON.parse(document.getElementById('MenusImgPath').innerHTML)
+      menus: JSON.parse(document.getElementById('menus').innerHTML),
+      orderedMenus: JSON.parse(document.getElementById('orderedMenus').innerHTML),
+      menusImgPath: JSON.parse(document.getElementById('menusImgPath').innerHTML)
+    });
+  } else if (App.classList.contains('cart_view')) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_UserViews_CartView_js__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      AppURLs: props.AppURLs,
+      orderedMenus: JSON.parse(document.getElementById('orderedMenus').innerHTML),
+      quantity: JSON.parse(document.getElementById('quantity').innerHTML),
+      menusImgPath: JSON.parse(document.getElementById('menusImgPath').innerHTML)
     });
   }
 }
+
+/***/ }),
+
+/***/ "./resources/js/components/UserViews/CartView.js":
+/*!*******************************************************!*\
+  !*** ./resources/js/components/UserViews/CartView.js ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return CartView; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _reusables_Buttons_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../reusables/Buttons.js */ "./resources/js/components/reusables/Buttons.js");
+/* harmony import */ var _reusables_Sections_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../reusables/Sections.js */ "./resources/js/components/reusables/Sections.js");
+/* harmony import */ var _reusables_AJAXRequest_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../reusables/AJAXRequest.js */ "./resources/js/components/reusables/AJAXRequest.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+
+
+
+var CartView = /*#__PURE__*/function (_React$Component) {
+  _inherits(CartView, _React$Component);
+
+  var _super = _createSuper(CartView);
+
+  function CartView(props) {
+    var _this;
+
+    _classCallCheck(this, CartView);
+
+    _this = _super.call(this, props);
+    console.log(_this.props.AppURLs.toggleAddMenuURL);
+    _this.menusImg = {};
+
+    _this.props.menusImgPath.map(function (path) {
+      var splitted = path.split('/');
+      _this.menusImg[splitted[1]] = splitted[2];
+    });
+
+    _this.state = {
+      cart: _this.props.orderedMenus.map(function (menu) {
+        return {
+          menu_id: menu.id,
+          menu_name: menu.name,
+          menu_img: _this.props.AppURLs.menusImg + menu.id + '/' + _this.menusImg[menu.id],
+          menu_price: menu.price,
+          menu_quantity: _this.props.quantity[menu.id]
+        };
+      })
+    };
+    _this.toggleAddMenu = _this.toggleAddMenu.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(CartView, [{
+    key: "toggleAddMenu",
+    value: function toggleAddMenu(menu_id, action) {
+      var AJAXCallback;
+
+      if (action === 'add') {
+        AJAXCallback = function AJAXCallback(response, component) {
+          component.setState(function (state) {
+            var newCartData = state.cart;
+            newCartData.forEach(function (cart, idx) {
+              if (cart.menu_id === menu_id) {
+                newCartData[idx].menu_quantity += 1;
+              }
+            });
+            return {
+              cart: newCartData
+            };
+          });
+        };
+      } else {
+        AJAXCallback = function AJAXCallback(response, component) {
+          component.setState(function (state) {
+            var newCartData = state.cart;
+            newCartData.forEach(function (cart, idx) {
+              if (cart.menu_id === menu_id) {
+                newCartData[idx].menu_quantity = newCartData[idx].menu_quantity === 0 ? 0 : newCartData[idx].menu_quantity - 1;
+              }
+            });
+            return {
+              cart: newCartData
+            };
+          });
+        };
+      }
+
+      Object(_reusables_AJAXRequest_js__WEBPACK_IMPORTED_MODULE_3__["AJAXPostRequest"])('menu_id=' + menu_id + '&action=' + action, this.props.AppURLs.toggleAddMenuURL, AJAXCallback, this);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Sections_js__WEBPACK_IMPORTED_MODULE_2__["Navbar"], {
+        brandImg: this.props.AppURLs.icons + 'logo.png',
+        navbarLinks: [{
+          type: 'link',
+          data: {
+            attr: {
+              href: this.props.AppURLs.domain
+            },
+            text: 'HOME'
+          }
+        }, {
+          type: 'link',
+          data: {
+            attr: {
+              href: '#'
+            },
+            text: 'ABOUT'
+          }
+        }, {
+          type: 'link',
+          data: {
+            attr: {
+              href: this.props.AppURLs.domain + 'menus'
+            },
+            text: 'OUR MENUS'
+          }
+        }, {
+          type: 'link',
+          data: {
+            attr: {
+              href: '#'
+            },
+            text: 'BLOG'
+          }
+        }, {
+          type: 'link',
+          data: {
+            attr: {
+              href: '#'
+            },
+            text: 'CONTACT'
+          }
+        }],
+        navbarActions: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Buttons_js__WEBPACK_IMPORTED_MODULE_1__["Button_1"], {
+          tag: 'a',
+          color: 'orange',
+          text: 'Your cart',
+          attr: {
+            style: {
+              fontSize: '1.65rem'
+            },
+            href: this.props.AppURLs.domain + 'cart'
+          }
+        })
+      }), this.state.cart.length !== 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Your ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "highlightText"
+      }, "Cart")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Sections_js__WEBPACK_IMPORTED_MODULE_2__["Cart"], {
+        cart: this.state.cart,
+        addBtnFunc: this.toggleAddMenu,
+        removeBtnFunc: this.toggleAddMenu
+      })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("article", {
+        style: {
+          width: '100%',
+          minHeight: '60vh',
+          fontFamily: 'Barlow, sans-serif',
+          fontWeight: '400',
+          fontSize: '2rem',
+          color: '#666666'
+        },
+        className: "cols_container x_center y_center"
+      }, "Your cart is currently empty", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Buttons_js__WEBPACK_IMPORTED_MODULE_1__["Button_1"], {
+        tag: 'a',
+        color: 'orange_gradient',
+        text: 'Shop now',
+        attr: {
+          href: this.props.AppURLs.domain + 'menus',
+          style: {
+            display: 'block',
+            marginTop: '2rem'
+          }
+        }
+      }))) //
+      ;
+    }
+  }]);
+
+  return CartView;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+
 
 /***/ }),
 
@@ -65873,18 +66092,12 @@ function LandingView(props) {
         text: 'ABOUT'
       }
     }, {
-      type: 'dropdown',
+      type: 'link',
       data: {
-        toggleText: 'SHOP',
-        items: [/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "#"
-        }, "asd"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "#"
-        }, "asd"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "#"
-        }, "asd"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "#"
-        }, "asd")]
+        attr: {
+          href: props.AppURLs.domain + 'menus'
+        },
+        text: 'OUR MENUS'
       }
     }, {
       type: 'link',
@@ -65903,101 +66116,17 @@ function LandingView(props) {
         text: 'CONTACT'
       }
     }],
-    navbarActions: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Buttons_js__WEBPACK_IMPORTED_MODULE_1__["Button_1"], {
-      tag: 'button',
-      color: 'orange',
-      text: 'Book now',
-      attr: {
-        style: {
-          fontSize: '1.65rem'
-        },
-        type: 'button'
-      }
+    navbarActions: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      className: "btn",
+      href: props.AppURLs.domain + 'cart'
     })
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    style: {
-      marginBottom: '20rem'
-    }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Sections_js__WEBPACK_IMPORTED_MODULE_2__["MenuGrid"], {
-    menus: [{
-      img: props.AppURLs.images + 'bg_10.jpg',
-      name: 'Grilled American Fillet',
-      details: 'Some shit with some shit. Some shit with some shit. Some shit with some shit.',
-      price: 'Rp. ' + 65400 / 1000 + 'k'
-    }, {
-      img: props.AppURLs.images + 'bg_1.jpg',
-      name: 'Grilled American Fillet',
-      details: 'Some shit with some shit. Some shit with some shit. Some shit with some shit.',
-      price: 'Rp. ' + 45700 / 1000 + 'k'
-    }, {
-      img: props.AppURLs.images + 'bg_2.jpg',
-      name: 'Grilled American Fillet',
-      details: 'Some shit with some shit. Some shit with some shit. Some shit with some shit.',
-      price: 'Rp. ' + 12000 / 1000 + 'k'
-    }, {
-      img: props.AppURLs.images + 'bg_3.jpg',
-      name: 'Grilled American Fillet',
-      details: 'Some shit with some shit. Some shit with some shit. Some shit with some shit.',
-      price: 'Rp. ' + 32500 / 1000 + 'k'
-    }, {
-      img: props.AppURLs.images + 'bg_4.jpg',
-      name: 'Grilled American Fillet',
-      details: 'Some shit with some shit. Some shit with some shit. Some shit with some shit.',
-      price: 'Rp. ' + 65400 / 1000 + 'k'
-    }]
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    style: {
-      marginBottom: '20rem'
-    }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Sections_js__WEBPACK_IMPORTED_MODULE_2__["Cart"], {
-    cartData: [{
-      menu_id: '1',
-      menu_img: props.AppURLs.images + 'bg_1.jpg',
-      menu_name: 'asdf',
-      menu_price: '13000',
-      menu_quantity: 2
-    }, {
-      menu_id: '2',
-      menu_img: props.AppURLs.images + 'bg_2.jpg',
-      menu_name: 'qwer',
-      menu_price: '15000',
-      menu_quantity: 1
-    }, {
-      menu_id: '3',
-      menu_img: props.AppURLs.images + 'bg_3.jpg',
-      menu_name: 'zxcv',
-      menu_price: '11000',
-      menu_quantity: 4
-    }]
-  }))) //
+    className: "cols_container x_center y_left head_section"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Welcome to Asahi", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "orange"
+  }, "Good food"), " is to be enjoyed food very beautiful in itse")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Quis.")))) //
   ;
 }
-/*
-
-*/
-
-/*
-		<Cart
-			cartData = {[
-				{
-					menu_id: '1', menu_img: props.AppURLs.images+'bg_1.jpg',
-					menu_name: 'asdf', menu_price: '13000', menu_quantity: 2
-				},
-				{
-					menu_id: '2', menu_img: props.AppURLs.images+'bg_2.jpg',
-					menu_name: 'qwer', menu_price: '15000', menu_quantity: 1
-				},
-				{
-					menu_id: '3', menu_img: props.AppURLs.images+'bg_3.jpg',
-					menu_name: 'zxcv', menu_price: '11000', menu_quantity: 4
-				},								
-			]}
-		/>
-*/
-
-/*
-
-*/
 
 /***/ }),
 
@@ -66015,153 +66144,174 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _reusables_Buttons_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../reusables/Buttons.js */ "./resources/js/components/reusables/Buttons.js");
 /* harmony import */ var _reusables_Sections_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../reusables/Sections.js */ "./resources/js/components/reusables/Sections.js");
+/* harmony import */ var _reusables_AJAXRequest_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../reusables/AJAXRequest.js */ "./resources/js/components/reusables/AJAXRequest.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 
 
-function MenusView(props) {
-  var menusImg = {};
-  props.MenusImgPath.forEach(function (path) {
-    var splitted = path.split('/');
-    menusImg[splitted[1]] = splitted[2];
-  });
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Sections_js__WEBPACK_IMPORTED_MODULE_2__["Navbar"], {
-    brandImg: props.AppURLs.icons + 'logo.png',
-    navbarLinks: [{
-      type: 'link',
-      data: {
-        attr: {
-          href: props.AppURLs.domain
-        },
-        text: 'HOME'
+
+
+
+var MenusView = /*#__PURE__*/function (_React$Component) {
+  _inherits(MenusView, _React$Component);
+
+  var _super = _createSuper(MenusView);
+
+  function MenusView(props) {
+    var _this;
+
+    _classCallCheck(this, MenusView);
+
+    _this = _super.call(this, props);
+    _this.menusImg = {};
+
+    _this.props.menusImgPath.forEach(function (path) {
+      var splitted = path.split('/');
+      _this.menusImg[splitted[1]] = splitted[2];
+    });
+
+    _this.state = {
+      menus: _this.props.menus.map(function (menu) {
+        return {
+          id: menu.id,
+          img: _this.props.AppURLs.menusImg + menu.id + '/' + _this.menusImg[menu.id],
+          name: menu.name,
+          details: menu.description,
+          quantity: _this.props.orderedMenus[menu.id] ? _this.props.orderedMenus[menu.id] : 0,
+          price: 'Rp. ' + menu.price / 1000 + 'k'
+        };
+      })
+    };
+    _this.toggleAddMenu = _this.toggleAddMenu.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(MenusView, [{
+    key: "toggleAddMenu",
+    value: function toggleAddMenu(menu_id, action) {
+      var AJAXCallback;
+
+      if (action === 'add') {
+        AJAXCallback = function AJAXCallback(response, component) {
+          component.setState(function (state) {
+            var newMenus = state.menus;
+            newMenus.forEach(function (menu, idx) {
+              if (menu.id === menu_id) {
+                newMenus[idx].quantity += 1;
+              }
+            });
+            return {
+              menus: newMenus
+            };
+          });
+        };
+      } else {
+        AJAXCallback = function AJAXCallback(response, component) {
+          component.setState(function (state) {
+            var newMenus = state.menus;
+            newMenus.forEach(function (menu, idx) {
+              if (menu.id === menu_id) {
+                newMenus[idx].quantity = newMenus[idx].quantity === 0 ? 0 : newMenus[idx].quantity - 1;
+              }
+            });
+            return {
+              menus: newMenus
+            };
+          });
+        };
       }
-    }, {
-      type: 'link',
-      data: {
-        attr: {
-          href: '#'
-        },
-        text: 'ABOUT'
-      }
-    }, {
-      type: 'dropdown',
-      data: {
-        toggleText: 'SHOP',
-        items: [/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "#"
-        }, "asd"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "#"
-        }, "asd"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "#"
-        }, "asd"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "#"
-        }, "asd")]
-      }
-    }, {
-      type: 'link',
-      data: {
-        attr: {
-          href: '#'
-        },
-        text: 'BLOG'
-      }
-    }, {
-      type: 'link',
-      data: {
-        attr: {
-          href: '#'
-        },
-        text: 'CONTACT'
-      }
-    }],
-    navbarActions: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Buttons_js__WEBPACK_IMPORTED_MODULE_1__["Button_1"], {
-      tag: 'button',
-      color: 'orange',
-      text: 'Book now',
-      attr: {
-        style: {
-          fontSize: '1.65rem'
-        },
-        type: 'button'
-      }
-    })
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    style: {
-      marginBottom: '20rem'
+
+      Object(_reusables_AJAXRequest_js__WEBPACK_IMPORTED_MODULE_3__["AJAXPostRequest"])('menu_id=' + menu_id + '&action=' + action, this.props.AppURLs.toggleAddMenuURL, AJAXCallback, this);
     }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Sections_js__WEBPACK_IMPORTED_MODULE_2__["MenuGrid"], {
-    menus: props.Menus.map(function (menu, idx) {
-      return {
-        img: props.AppURLs.menusImg + menu.id + '/' + menusImg[menu.id],
-        name: menu.name,
-        details: menu.description,
-        price: 'Rp. ' + menu.price / 1000 + 'k'
-      };
-    }),
-    addOrRemoveMenuURL: props.AppURLs.addOrRemoveMenu
-  }))) //
-  ;
-}
-/*
+  }, {
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Sections_js__WEBPACK_IMPORTED_MODULE_2__["Navbar"], {
+        brandImg: this.props.AppURLs.icons + 'logo.png',
+        navbarLinks: [{
+          type: 'link',
+          data: {
+            attr: {
+              href: this.props.AppURLs.domain
+            },
+            text: 'HOME'
+          }
+        }, {
+          type: 'link',
+          data: {
+            attr: {
+              href: '#'
+            },
+            text: 'ABOUT'
+          }
+        }, {
+          type: 'link',
+          data: {
+            attr: {
+              href: this.props.AppURLs.domain + 'menus'
+            },
+            text: 'OUR MENUS'
+          }
+        }, {
+          type: 'link',
+          data: {
+            attr: {
+              href: '#'
+            },
+            text: 'BLOG'
+          }
+        }, {
+          type: 'link',
+          data: {
+            attr: {
+              href: '#'
+            },
+            text: 'CONTACT'
+          }
+        }],
+        navbarActions: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          className: "btn",
+          href: this.props.AppURLs.domain + 'cart'
+        })
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Our ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "highlightText"
+      }, "Menus")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: {
+          marginBottom: '20rem'
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Sections_js__WEBPACK_IMPORTED_MODULE_2__["MenuGrid"], {
+        menus: this.state.menus,
+        addBtnFunc: this.toggleAddMenu,
+        removeBtnFunc: this.toggleAddMenu
+      }))) //			
+      ;
+    }
+  }]);
 
-*/
+  return MenusView;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/*
-		<Cart
-			cartData = {[
-				{
-					menu_id: '1', menu_img: props.AppURLs.images+'bg_1.jpg',
-					menu_name: 'asdf', menu_price: '13000', menu_quantity: 2
-				},
-				{
-					menu_id: '2', menu_img: props.AppURLs.images+'bg_2.jpg',
-					menu_name: 'qwer', menu_price: '15000', menu_quantity: 1
-				},
-				{
-					menu_id: '3', menu_img: props.AppURLs.images+'bg_3.jpg',
-					menu_name: 'zxcv', menu_price: '11000', menu_quantity: 4
-				},								
-			]}
-		/>
-*/
 
-/*
-		<div style={{marginBottom: '20rem'}}>
-		<MenuGrid
-			menus = {[
-				{
-					img: props.AppURLs.images+'bg_10.jpg',
-					name: 'Grilled American Fillet',
-					details: 'Some shit with some shit. Some shit with some shit. Some shit with some shit.',
-					price: 'Rp. '+(65400/1000)+'k',
-				},
-				{
-					img: props.AppURLs.images+'bg_1.jpg',
-					name: 'Grilled American Fillet',
-					details: 'Some shit with some shit. Some shit with some shit. Some shit with some shit.',
-					price: 'Rp. '+(45700/1000)+'k',
-				},
-				{
-					img: props.AppURLs.images+'bg_2.jpg',
-					name: 'Grilled American Fillet',
-					details: 'Some shit with some shit. Some shit with some shit. Some shit with some shit.',
-					price: 'Rp. '+(12000/1000)+'k',
-				},
-				{
-					img: props.AppURLs.images+'bg_3.jpg',
-					name: 'Grilled American Fillet',
-					details: 'Some shit with some shit. Some shit with some shit. Some shit with some shit.',
-					price: 'Rp. '+(32500/1000)+'k',
-				},
-				{
-					img: props.AppURLs.images+'bg_4.jpg',
-					name: 'Grilled American Fillet',
-					details: 'Some shit with some shit. Some shit with some shit. Some shit with some shit.',
-					price: 'Rp. '+(65400/1000)+'k',
-				},																
-			]}
-		/>		
-		</div>
-*/
 
 /***/ }),
 
@@ -66269,7 +66419,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Cart", function() { return Cart; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _reusables_AJAXRequest_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../reusables/AJAXRequest.js */ "./resources/js/components/reusables/AJAXRequest.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -66293,7 +66442,6 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
 
 
 
@@ -66406,177 +66554,93 @@ var Navbar = /*#__PURE__*/function (_React$Component) {
 | ]
 */
 
-var MenuGrid = /*#__PURE__*/function (_React$Component2) {
-  _inherits(MenuGrid, _React$Component2);
-
-  var _super2 = _createSuper(MenuGrid);
-
-  function MenuGrid(props) {
-    var _this3;
-
-    _classCallCheck(this, MenuGrid);
-
-    _this3 = _super2.call(this, props);
-    _this3.addRemoveMenu = _this3.addRemoveMenu.bind(_assertThisInitialized(_this3));
-    return _this3;
-  }
-
-  _createClass(MenuGrid, [{
-    key: "addRemoveMenu",
-    value: function addRemoveMenu(menu_id, action) {
-      console.log('asd');
-      Object(_reusables_AJAXRequest_js__WEBPACK_IMPORTED_MODULE_1__["AJAXPostRequest"])('menu_id=' + menu_id + '&' + 'action=' + action, this.props.addOrRemoveMenuURL);
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var _this4 = this;
-
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "menuGrid"
-      }, this.props.menus.map(function (menu, idx) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("article", {
-          className: "menu",
-          key: idx
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          className: "img",
-          src: menu.img
-        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "text"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", {
-          className: "name"
-        }, menu.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "details"
-        }, menu.details), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "price_quantity"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          className: "price"
-        }, menu.price), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          className: "quantity"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          style: {
-            order: '2'
-          }
-        }, "0"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          type: "button",
-          style: {
-            order: '3'
-          },
-          onClick: function onClick() {
-            return _this4.addRemoveMenu(menu.id, 'add');
-          }
-        }, "+"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          type: "button",
-          style: {
-            order: '1'
-          },
-          onClick: function onClick() {
-            return _this4.addRemoveMenu(menu.id, 'remove');
-          }
-        }, "-")))));
-      }))) //
-      ;
-    }
-  }]);
-
-  return MenuGrid;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
-var Cart = /*#__PURE__*/function (_React$Component3) {
-  _inherits(Cart, _React$Component3);
-
-  var _super3 = _createSuper(Cart);
-
-  function Cart(props) {
-    var _this5;
-
-    _classCallCheck(this, Cart);
-
-    _this5 = _super3.call(this, props);
-    _this5.state = {
-      cartData: _this5.props.cartData
-    };
-    _this5.toggleQuantity = _this5.toggleQuantity.bind(_assertThisInitialized(_this5));
-    return _this5;
-  }
-
-  _createClass(Cart, [{
-    key: "toggleQuantity",
-    value: function toggleQuantity(add, menu_id) {
-      if (add) {
-        this.setState(function (state) {
-          var newCartData = state.cartData;
-          newCartData.forEach(function (cart, idx) {
-            if (cart.menu_id === menu_id) {
-              newCartData[idx].menu_quantity += 1;
-            }
-          });
-          return {
-            cartData: newCartData
-          };
-        });
-      } else {
-        this.setState(function (state) {
-          var newCartData = state.cartData;
-          newCartData.forEach(function (cart, idx) {
-            if (cart.menu_id === menu_id) {
-              newCartData[idx].menu_quantity = newCartData[idx].menu_quantity === 0 ? 0 : newCartData[idx].menu_quantity - 1;
-            }
-          });
-          return {
-            cartData: newCartData
-          };
-        });
+function MenuGrid(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "menuGrid"
+  }, props.menus.map(function (menu, idx) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("article", {
+      className: "menu",
+      key: idx
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      className: "img",
+      src: menu.img
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "text"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", {
+      className: "name"
+    }, menu.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "details"
+    }, menu.details), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "price_quantity"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "price"
+    }, menu.price), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "quantity"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      style: {
+        order: '2'
       }
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var _this6 = this;
-
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "cart"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "MENU"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "UNIT PRICE"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "QUANTITY"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "TOTAL"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, this.state.cartData.map(function (cart, idx) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
-          key: idx
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-          className: "menu"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          src: cart.menu_img
-        }), cart.menu_name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-          className: "unitPrice"
-        }, cart.menu_price), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-          className: "quantity"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          className: "qt",
-          style: {
-            order: '2'
-          }
-        }, cart.menu_quantity), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          className: "qtBtn",
-          style: {
-            order: '3'
-          },
-          onClick: function onClick() {
-            return _this6.toggleQuantity(true, cart.menu_id);
-          }
-        }, "+"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          className: "qtBtn",
-          style: {
-            order: '1'
-          },
-          onClick: function onClick() {
-            return _this6.toggleQuantity(false, cart.menu_id);
-          }
-        }, "-"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-          className: "total"
-        }, cart.menu_quantity * cart.menu_price));
-      }))))) //
-      ;
-    }
-  }]);
-
-  return Cart;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+    }, menu.quantity), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      type: "button",
+      style: {
+        order: '3'
+      },
+      onClick: function onClick() {
+        return props.addBtnFunc(menu.id, 'add');
+      }
+    }, "+"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      type: "button",
+      style: {
+        order: '1'
+      },
+      onClick: function onClick() {
+        return props.addBtnFunc(menu.id, 'remove');
+      }
+    }, "-")))));
+  }))) //
+  ;
+}
+function Cart(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "cart"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "MENU"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "UNIT PRICE"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "QUANTITY"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "TOTAL"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, props.cart.map(function (menu, idx) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
+      key: idx
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+      className: "menu"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      src: menu.menu_img
+    }), menu.menu_name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+      className: "unitPrice"
+    }, 'Rp. ' + menu.menu_price), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+      className: "quantity"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "qt",
+      style: {
+        order: '2'
+      }
+    }, menu.menu_quantity), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      className: "qtBtn",
+      style: {
+        order: '3'
+      },
+      onClick: function onClick() {
+        return props.addBtnFunc(menu.menu_id, 'add');
+      }
+    }, "+"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      className: "qtBtn",
+      style: {
+        order: '1'
+      },
+      onClick: function onClick() {
+        return props.removeBtnFunc(menu.menu_id, 'remove');
+      }
+    }, "-"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+      className: "total"
+    }, 'Rp. ' + menu.menu_quantity * menu.menu_price));
+  }))))) //
+  ;
+}
 
 /***/ }),
 

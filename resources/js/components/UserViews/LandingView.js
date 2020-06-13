@@ -14,13 +14,8 @@ export default function LandingView(props){
 				{type: 'link', data:{
 					attr: {href: '#'}, text: 'ABOUT'
 				}},				
-				{type: 'dropdown', data:{
-					toggleText: 'SHOP', items: [
-						<a href="#">asd</a>,
-						<a href="#">asd</a>,
-						<a href="#">asd</a>,
-						<a href="#">asd</a>
-					]
+				{type: 'link', data:{
+					attr: {href: props.AppURLs.domain+'menus'}, text: 'OUR MENUS'
 				}},
 				{type: 'link', data:{
 					attr: {href: '#'}, text: 'BLOG'
@@ -30,100 +25,21 @@ export default function LandingView(props){
 				}},				
 			]}
 			navbarActions = {
-				<Button_1
-					tag = {'button'}
-					color = {'orange'}
-					text = {'Book now'}
-					attr = {
-						{
-							style: {fontSize: '1.65rem'},
-							type: 'button'
-						}
-					}
-				/>
+				<a className="btn" href={props.AppURLs.domain+'cart'}></a>
 			}
 		/>
-		<div style={{marginBottom: '20rem'}}>
-		<MenuGrid
-			menus = {[
-				{
-					img: props.AppURLs.images+'bg_10.jpg',
-					name: 'Grilled American Fillet',
-					details: 'Some shit with some shit. Some shit with some shit. Some shit with some shit.',
-					price: 'Rp. '+(65400/1000)+'k',
-				},
-				{
-					img: props.AppURLs.images+'bg_1.jpg',
-					name: 'Grilled American Fillet',
-					details: 'Some shit with some shit. Some shit with some shit. Some shit with some shit.',
-					price: 'Rp. '+(45700/1000)+'k',
-				},
-				{
-					img: props.AppURLs.images+'bg_2.jpg',
-					name: 'Grilled American Fillet',
-					details: 'Some shit with some shit. Some shit with some shit. Some shit with some shit.',
-					price: 'Rp. '+(12000/1000)+'k',
-				},
-				{
-					img: props.AppURLs.images+'bg_3.jpg',
-					name: 'Grilled American Fillet',
-					details: 'Some shit with some shit. Some shit with some shit. Some shit with some shit.',
-					price: 'Rp. '+(32500/1000)+'k',
-				},
-				{
-					img: props.AppURLs.images+'bg_4.jpg',
-					name: 'Grilled American Fillet',
-					details: 'Some shit with some shit. Some shit with some shit. Some shit with some shit.',
-					price: 'Rp. '+(65400/1000)+'k',
-				},																
-			]}
-		/>		
+		<div className="cols_container x_center y_left head_section">
+			<h1>
+				Welcome to Asahi
+				<span><span className="orange">Good food</span> is to be enjoyed food very beautiful in itse</span>
+			</h1>
+			<p>
+			<span>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+				sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Quis.			
+			</span>			
+			</p>
 		</div>
-		<div style={{marginBottom: '20rem'}}>
-		<Cart
-			cartData = {[
-				{
-					menu_id: '1', menu_img: props.AppURLs.images+'bg_1.jpg',
-					menu_name: 'asdf', menu_price: '13000', menu_quantity: 2
-				},
-				{
-					menu_id: '2', menu_img: props.AppURLs.images+'bg_2.jpg',
-					menu_name: 'qwer', menu_price: '15000', menu_quantity: 1
-				},
-				{
-					menu_id: '3', menu_img: props.AppURLs.images+'bg_3.jpg',
-					menu_name: 'zxcv', menu_price: '11000', menu_quantity: 4
-				},								
-			]}
-		/>		
-		</div>	
 		</>//
 	);
 }
-
-/*
-
-*/
-
-/*
-		<Cart
-			cartData = {[
-				{
-					menu_id: '1', menu_img: props.AppURLs.images+'bg_1.jpg',
-					menu_name: 'asdf', menu_price: '13000', menu_quantity: 2
-				},
-				{
-					menu_id: '2', menu_img: props.AppURLs.images+'bg_2.jpg',
-					menu_name: 'qwer', menu_price: '15000', menu_quantity: 1
-				},
-				{
-					menu_id: '3', menu_img: props.AppURLs.images+'bg_3.jpg',
-					menu_name: 'zxcv', menu_price: '11000', menu_quantity: 4
-				},								
-			]}
-		/>
-*/
-
-/*
-
-*/

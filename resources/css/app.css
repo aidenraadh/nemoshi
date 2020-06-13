@@ -116,6 +116,10 @@ select{
 	background: linear-gradient(to right, #eb883b, #f26900);
 }
 
+.highlightText{
+	color: #f16d07;
+}
+
 .Carousel{
     width: 40rem;
 }
@@ -129,6 +133,10 @@ select{
 .Carousel .display, .Carousel .item{
     width: 100%;
     flex-shrink: 0;
+}
+
+.head_section{
+	padding-top: 12rem;
 }
 
 .navbar{
@@ -265,6 +273,13 @@ select{
 	justify-content: center;
 }
 
+.navbarActions .btn{
+	display: inline-block;
+	width: 3.2rem; height: 3.2rem;
+	border-radius: 100%;
+	background-color: #2b272f;
+}
+
 .clsNavbar{
 	display: none;
 	padding-left: 2rem;
@@ -298,7 +313,7 @@ select{
 	display: grid;
 	grid-template-columns: 32% 32% 32%;
 	grid-column-gap: 2.6%;
-	grid-row-gap: 4%;
+	grid-row-gap: 2%;
 	border-radius: 2px;
 }
 
@@ -440,6 +455,55 @@ select{
 	text-align: center;
 }
 
+#UserApp.landing_view .head_section{
+	width: 100%;
+	min-height: 100vh;
+	background: url('../images/bg_5.jpg') no-repeat scroll 0 0;
+	background-size: cover;
+}
+
+#UserApp.landing_view h1{
+	width: 50%;
+	padding-left: 4rem;
+	font-family: 'Lobster Two', sans-serif;
+	font-size: 2.4rem;
+	text-align: left;
+	color: #f16d07;
+}
+
+#UserApp.landing_view h1 > span{
+	display: block;
+	font-size: 3.8rem;
+	color: #FFFFFF;
+}
+
+#UserApp.landing_view .head_section p{
+	width: 50%;
+	padding-left: 4rem;	
+	font-family: 'Barlow', sans-serif;
+	font-weight: 400;
+	font-size: 1.8em;
+	color: #FFFFFF;
+}
+
+#UserApp.menus_view h1{
+	width: 100%;
+	margin-bottom: 3rem;
+	font-family: 'Lobster Two', sans-serif;
+	font-size: 2.8rem;
+	text-align: center;
+	color: #363636;
+}
+
+#UserApp.cart_view h1{
+	width: 100%;
+	margin-bottom: 3rem;
+	font-family: 'Lobster Two', sans-serif;
+	font-size: 2.8rem;
+	text-align: center;
+	color: #363636;
+}
+
 @media only screen and (min-width: 1281px) {
   html{
     font-size: 0.78125vw;
@@ -495,7 +559,7 @@ select{
 	}
 	.menuGrid{
 		grid-template-columns: 48.4% 48.4%;
-		grid-row-gap: 2%;
+		grid-row-gap: 1.2%;
 	}	
 }	
 
@@ -503,6 +567,7 @@ select{
 @media only screen and (max-width: 800px) {
 	.menuGrid{
 		width: 88%;
+		grid-row-gap: 1.2%;
 	}
 	.cart table{
 		width: 88%;
@@ -513,6 +578,7 @@ select{
 	.menuGrid{
 		width: 86%;
 		grid-template-columns: 100%;
+		grid-row-gap: 1%;
 	}
 	.cart table{
 		width: 86%;

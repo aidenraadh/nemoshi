@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
-@section('title', 'Our Menus')
+@section('title', 'Your Cart')
 
 @section('content')
 
-<div id="UserApp" class="App menus_view">
+<div id="UserApp" class="App cart_view">
 </div>
 
 <script type="application/json" id="AppURLs">
@@ -14,13 +14,12 @@
 <script type="application/json" id="orderedMenus">
 	<?= ($orderedMenus ? json_encode($orderedMenus, true) : '[]') ?>
 </script>
-
-<script type="application/json" id="menus">
-	<?= ($menus ? json_encode($menus, true) : '[]') ?>
+<script type="application/json" id="quantity">
+	<?= ($quantity ? json_encode($quantity, true) : '[]') ?>
 </script>
-
-
 <script type="application/json" id="menusImgPath">
 	<?= ($menusImgPath ? json_encode($menusImgPath, true) : '[]') ?>
 </script>
+
+
 @endsection

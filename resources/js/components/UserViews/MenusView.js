@@ -1,34 +1,90 @@
 import React from 'react';
-import {Button_1} from './../reusables/Buttons.js'
-import {Navbar, MenuGrid} from './../reusables/Sections.js'
+import {Button_1} from './../reusables/Buttons.js';
+import {Navbar, MenuGrid} from './../reusables/Sections.js';
+import {AJAXPostRequest} from './../reusables/AJAXRequest.js';
 
-export default function MenusView(props){
 
-	let menusImg = {};
+export default class MenusView extends React.Component{
+	constructor(props){
+		super(props);
 
-	props.MenusImgPath.forEach((path) => {
-		let splitted = path.split('/');
-		menusImg[ splitted[1] ] = splitted[2];
-	});
+		this.menusImg = {};
 
-	return (
+		this.props.menusImgPath.forEach((path) => {
+			let splitted = path.split('/');
+			this.menusImg[ splitted[1] ] = splitted[2];
+		});		
+
+		this.state = {
+			menus: this.props.menus.map((menu) => (
+				{
+					id: menu.id,
+					img: this.props.AppURLs.menusImg+menu.id+'/'+this.menusImg[menu.id],
+					name: menu.name,
+					details: menu.description,
+					quantity: (this.props.orderedMenus[menu.id] ? this.props.orderedMenus[menu.id] : 0),
+					price: 'Rp. '+(menu.price/1000)+'k',
+				}				
+			)),
+		};
+		this.toggleAddMenu = this.toggleAddMenu.bind(this);
+	}
+
+	toggleAddMenu(menu_id, action){
+		let AJAXCallback;
+
+		if(action === 'add'){
+			AJAXCallback = function(response, component){
+				component.setState((state) => {
+					let newMenus = state.menus;
+					newMenus.forEach((menu, idx) => {
+						if(menu.id === menu_id){
+							newMenus[idx].quantity += 1;
+						}
+					});
+					return {menus: newMenus};
+				});				
+			}
+		}
+		else{
+			AJAXCallback = function(response, component){
+				component.setState((state) => {
+					let newMenus = state.menus;
+					newMenus.forEach((menu, idx) => {
+						if(menu.id === menu_id){
+							newMenus[idx].quantity = (
+								newMenus[idx].quantity === 0 ?
+								0 : (newMenus[idx].quantity-1)
+							);
+						}
+					});
+					return {menus: newMenus};
+				});					
+			}		
+		}
+
+		AJAXPostRequest(
+			'menu_id='+menu_id+'&action='+action,
+			this.props.AppURLs.toggleAddMenuURL,
+			AJAXCallback,
+			this
+		);		
+	}
+
+	render(){
+		return (
 		<>
 		<Navbar
-			brandImg = {props.AppURLs.icons+'logo.png'}
+			brandImg = {this.props.AppURLs.icons+'logo.png'}
 			navbarLinks = {[
 				{type: 'link', data:{
-					attr: {href: props.AppURLs.domain}, text: 'HOME'
+					attr: {href: this.props.AppURLs.domain}, text: 'HOME'
 				}},
 				{type: 'link', data:{
 					attr: {href: '#'}, text: 'ABOUT'
 				}},				
-				{type: 'dropdown', data:{
-					toggleText: 'SHOP', items: [
-						<a href="#">asd</a>,
-						<a href="#">asd</a>,
-						<a href="#">asd</a>,
-						<a href="#">asd</a>
-					]
+				{type: 'link', data:{
+					attr: {href: this.props.AppURLs.domain+'menus'}, text: 'OUR MENUS'
 				}},
 				{type: 'link', data:{
 					attr: {href: '#'}, text: 'BLOG'
@@ -38,94 +94,18 @@ export default function MenusView(props){
 				}},				
 			]}
 			navbarActions = {
-				<Button_1
-					tag = {'button'}
-					color = {'orange'}
-					text = {'Book now'}
-					attr = {
-						{
-							style: {fontSize: '1.65rem'},
-							type: 'button'
-						}
-					}
-				/>
+				<a className="btn" href={this.props.AppURLs.domain+'cart'}></a>
 			}
 		/>
+		<h1>Our <span className="highlightText">Menus</span></h1>
 		<div style={{marginBottom: '20rem'}}>
 		<MenuGrid
-			menus = {props.Menus.map((menu, idx) => (
-				{
-					img: props.AppURLs.menusImg+menu.id+'/'+menusImg[menu.id],
-					name: menu.name,
-					details: menu.description,
-					price: 'Rp. '+(menu.price/1000)+'k',
-				}
-			))}
-			addOrRemoveMenuURL = {props.AppURLs.addOrRemoveMenu}
+			menus = {this.state.menus}
+			addBtnFunc = {this.toggleAddMenu}
+			removeBtnFunc = {this.toggleAddMenu}
 		/>		
 		</div>		
-		</>//
-	);
+		</>//			
+		);
+	}
 }
-
-/*
-
-*/
-
-/*
-		<Cart
-			cartData = {[
-				{
-					menu_id: '1', menu_img: props.AppURLs.images+'bg_1.jpg',
-					menu_name: 'asdf', menu_price: '13000', menu_quantity: 2
-				},
-				{
-					menu_id: '2', menu_img: props.AppURLs.images+'bg_2.jpg',
-					menu_name: 'qwer', menu_price: '15000', menu_quantity: 1
-				},
-				{
-					menu_id: '3', menu_img: props.AppURLs.images+'bg_3.jpg',
-					menu_name: 'zxcv', menu_price: '11000', menu_quantity: 4
-				},								
-			]}
-		/>
-*/
-
-/*
-		<div style={{marginBottom: '20rem'}}>
-		<MenuGrid
-			menus = {[
-				{
-					img: props.AppURLs.images+'bg_10.jpg',
-					name: 'Grilled American Fillet',
-					details: 'Some shit with some shit. Some shit with some shit. Some shit with some shit.',
-					price: 'Rp. '+(65400/1000)+'k',
-				},
-				{
-					img: props.AppURLs.images+'bg_1.jpg',
-					name: 'Grilled American Fillet',
-					details: 'Some shit with some shit. Some shit with some shit. Some shit with some shit.',
-					price: 'Rp. '+(45700/1000)+'k',
-				},
-				{
-					img: props.AppURLs.images+'bg_2.jpg',
-					name: 'Grilled American Fillet',
-					details: 'Some shit with some shit. Some shit with some shit. Some shit with some shit.',
-					price: 'Rp. '+(12000/1000)+'k',
-				},
-				{
-					img: props.AppURLs.images+'bg_3.jpg',
-					name: 'Grilled American Fillet',
-					details: 'Some shit with some shit. Some shit with some shit. Some shit with some shit.',
-					price: 'Rp. '+(32500/1000)+'k',
-				},
-				{
-					img: props.AppURLs.images+'bg_4.jpg',
-					name: 'Grilled American Fillet',
-					details: 'Some shit with some shit. Some shit with some shit. Some shit with some shit.',
-					price: 'Rp. '+(65400/1000)+'k',
-				},																
-			]}
-		/>		
-		</div>
-*/

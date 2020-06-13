@@ -17,11 +17,40 @@ class RouteServiceProvider extends ServiceProvider
     protected $namespace = 'App\Http\Controllers';
 
     /**
-     * The path to the "home" route for your application.
+     * The name of the "home" route for your application
+     * based on the guards of this app.
      *
-     * @var string
+     * (str)guard_name => (str)home_route_name
      */
-    public const HOME = '/home';
+    public const HOME = [
+        'web' => '/home',
+        'admins' => 'admin/home',
+    ];
+
+    /**
+     * The name of the "login" route for your application
+     * based on the guards of this app.
+     *
+     * (str)guard_name => (str)login_route_name
+     */    
+
+    public const LOGIN = [
+        'web' => 'login',
+        'admins' => 'admin/login',
+    ];
+
+    /**
+     * The path prefix of the routes for your application by the guards
+     * of this app.
+     *
+     * (str)guard_name => (str)path_prefix
+     */      
+
+    public const PATH_PATTERN = [
+        'web' => null,
+        'admins' => '/admin',
+    ];    
+
 
     /**
      * Define your route model bindings, pattern filters, etc.

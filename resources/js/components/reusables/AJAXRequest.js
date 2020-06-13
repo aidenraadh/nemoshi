@@ -2,9 +2,9 @@ export function AJAXPostRequest(data, URL, callback, callingComponent){
 	const xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
 	  if (this.readyState == 4 && this.status == 200) {
-	    if(callback){
-	    	callback(this.responseText, callingComponent)
-	    }
+	  	if(callback){
+	  		callback(this.responseText, callingComponent);
+	  	}
 	  }
 	};
 	xhttp.open('POST', URL, true);
