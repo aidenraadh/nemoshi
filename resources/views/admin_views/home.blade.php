@@ -4,11 +4,12 @@
 
 @section('content')
 
-<div id="AdminApp" class="App home_view" style="padding-top: 15rem;">
+<div id="AdminApp" class="App home_view">
 	
 </div>
 
-<script type="application/json" id="fonts"><?= $fonts ?></script>
-<script type="application/json" id="AppURLs"><?= $AppURLs ?></script>
-<script type="application/json" id="AdminData"><?= $AdminData ?></script>
+<script type="application/json" id="AppURLs">
+	<?= ($AppURLs ? json_encode($AppURLs, true): '[]') ?>
+</script>
+
 @endsection

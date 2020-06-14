@@ -65802,6 +65802,157 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/js/components/AdminApp.js":
+/*!*********************************************!*\
+  !*** ./resources/js/components/AdminApp.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return AdminApp; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _AdminViews_RegisterView_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AdminViews/RegisterView.js */ "./resources/js/components/AdminViews/RegisterView.js");
+/* harmony import */ var _AdminViews_LoginView_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AdminViews/LoginView.js */ "./resources/js/components/AdminViews/LoginView.js");
+/* harmony import */ var _AdminViews_HomeView_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./AdminViews/HomeView.js */ "./resources/js/components/AdminViews/HomeView.js");
+
+
+
+
+var App = document.getElementById('AdminApp');
+function AdminApp(props) {
+  if (App.classList.contains('register_view')) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AdminViews_RegisterView_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      AppURLs: props.AppURLs
+    });
+  } else if (App.classList.contains('login_view')) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AdminViews_LoginView_js__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      AppURLs: props.AppURLs
+    });
+  } else if (App.classList.contains('home_view')) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AdminViews_HomeView_js__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      AppURLs: props.AppURLs
+    });
+  }
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/AdminViews/HomeView.js":
+/*!********************************************************!*\
+  !*** ./resources/js/components/AdminViews/HomeView.js ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return HomeView; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _reusables_Forms_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../reusables/Forms.js */ "./resources/js/components/reusables/Forms.js");
+
+
+function HomeView(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+    method: "POST",
+    action: props.AppURLs.logout
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Forms_js__WEBPACK_IMPORTED_MODULE_1__["LARAVEL_CSRF_TOKEN"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    type: "submit"
+  }, "logout"))) //
+  ;
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/AdminViews/LoginView.js":
+/*!*********************************************************!*\
+  !*** ./resources/js/components/AdminViews/LoginView.js ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return LoginView; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _reusables_Forms_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../reusables/Forms.js */ "./resources/js/components/reusables/Forms.js");
+
+
+function LoginView(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+    method: "POST",
+    action: props.AppURLs.login
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Forms_js__WEBPACK_IMPORTED_MODULE_1__["LARAVEL_CSRF_TOKEN"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "email",
+    name: "email",
+    required: true,
+    placeholder: "email",
+    autoFocus: true
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "password",
+    name: "password",
+    required: true,
+    placeholder: "password"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    type: "submit"
+  }, "Login"))) //
+  ;
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/AdminViews/RegisterView.js":
+/*!************************************************************!*\
+  !*** ./resources/js/components/AdminViews/RegisterView.js ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return RegisterView; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _reusables_Forms_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../reusables/Forms.js */ "./resources/js/components/reusables/Forms.js");
+
+
+function RegisterView(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+    method: "POST",
+    action: props.AppURLs.register
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Forms_js__WEBPACK_IMPORTED_MODULE_1__["LARAVEL_CSRF_TOKEN"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "text",
+    name: "name",
+    placeholder: "name",
+    required: true,
+    autoFocus: true
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "email",
+    name: "email",
+    placeholder: "email",
+    required: true
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "password",
+    name: "password",
+    placeholder: "password",
+    required: true
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "password",
+    name: "password_confirmation",
+    placeholder: "password_confirmation",
+    required: true
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    type: "submit"
+  }, "Sign up"))) //
+  ;
+}
+
+/***/ }),
+
 /***/ "./resources/js/components/UserApp.js":
 /*!********************************************!*\
   !*** ./resources/js/components/UserApp.js ***!
@@ -66016,13 +66167,15 @@ var CartView = /*#__PURE__*/function (_React$Component) {
             href: this.props.AppURLs.domain + 'cart'
           }
         })
-      }), this.state.cart.length !== 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Your ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }), this.state.cart.length !== 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "head_section"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Your ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "highlightText"
       }, "Cart")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Sections_js__WEBPACK_IMPORTED_MODULE_2__["Cart"], {
         cart: this.state.cart,
         addBtnFunc: this.toggleAddMenu,
         removeBtnFunc: this.toggleAddMenu
-      })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("article", {
+      }))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("article", {
         style: {
           width: '100%',
           minHeight: '60vh',
@@ -66043,7 +66196,105 @@ var CartView = /*#__PURE__*/function (_React$Component) {
             marginTop: '2rem'
           }
         }
-      }))) //
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Sections_js__WEBPACK_IMPORTED_MODULE_2__["Footer"], {
+        sections: [{
+          tag: 'section',
+          heading: 'SITE MAP',
+          bodies: [{
+            type: 'link',
+            text: 'Home',
+            attr: {
+              href: this.props.AppURLs.domain
+            }
+          }, {
+            type: 'link',
+            text: 'About',
+            attr: {
+              href: '#'
+            }
+          }, {
+            type: 'link',
+            text: 'Our Menus',
+            attr: {
+              href: this.props.AppURLs.domain + 'menus'
+            }
+          }, {
+            type: 'link',
+            text: 'Contact',
+            attr: {
+              href: '#'
+            }
+          }]
+        }, {
+          tag: 'address',
+          heading: 'ADDRESS',
+          bodies: [{
+            type: 'text',
+            tag: 'p',
+            text: "44 Canal Center Plaza #200, Alexandria, VA 22314, USA"
+          }, {
+            type: 'link',
+            text: 'Email: qwerty@gmail.com',
+            attr: {
+              href: 'mailto:qwerty@gmail.com'
+            }
+          }]
+        }, {
+          tag: 'section',
+          heading: 'OPENING HOURS',
+          bodies: [{
+            type: 'text',
+            tag: 'span',
+            text: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Monday:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "9.00 AM - 22.00 PM")),
+            attr: {
+              style: {
+                display: 'flex',
+                justifyContent: 'space-between'
+              }
+            }
+          }, {
+            type: 'text',
+            tag: 'span',
+            text: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Tuesday:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "9.00 AM - 22.00 PM")),
+            attr: {
+              style: {
+                display: 'flex',
+                justifyContent: 'space-between'
+              }
+            }
+          }, {
+            type: 'text',
+            tag: 'span',
+            text: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Wednesday:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "9.00 AM - 22.00 PM")),
+            attr: {
+              style: {
+                display: 'flex',
+                justifyContent: 'space-between'
+              }
+            }
+          }, {
+            type: 'text',
+            tag: 'span',
+            text: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Thursday:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "9.00 AM - 22.00 PM")),
+            attr: {
+              style: {
+                display: 'flex',
+                justifyContent: 'space-between'
+              }
+            }
+          }, {
+            type: 'text',
+            tag: 'span',
+            text: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Friday:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "9.00 AM - 22.00 PM")),
+            attr: {
+              style: {
+                display: 'flex',
+                justifyContent: 'space-between'
+              }
+            }
+          }]
+        }]
+      })) //
       ;
     }
   }]);
@@ -66124,7 +66375,105 @@ function LandingView(props) {
     className: "cols_container x_center y_left head_section"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Welcome to Asahi", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "orange"
-  }, "Good food"), " is to be enjoyed food very beautiful in itse")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Quis.")))) //
+  }, "Good food"), " is to be enjoyed food very beautiful in itse")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Quis."))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Sections_js__WEBPACK_IMPORTED_MODULE_2__["Footer"], {
+    sections: [{
+      tag: 'section',
+      heading: 'SITE MAP',
+      bodies: [{
+        type: 'link',
+        text: 'Home',
+        attr: {
+          href: props.AppURLs.domain
+        }
+      }, {
+        type: 'link',
+        text: 'About',
+        attr: {
+          href: '#'
+        }
+      }, {
+        type: 'link',
+        text: 'Our Menus',
+        attr: {
+          href: props.AppURLs.domain + 'menus'
+        }
+      }, {
+        type: 'link',
+        text: 'Contact',
+        attr: {
+          href: '#'
+        }
+      }]
+    }, {
+      tag: 'address',
+      heading: 'ADDRESS',
+      bodies: [{
+        type: 'text',
+        tag: 'p',
+        text: "44 Canal Center Plaza #200, Alexandria, VA 22314, USA"
+      }, {
+        type: 'link',
+        text: 'Email: qwerty@gmail.com',
+        attr: {
+          href: 'mailto:qwerty@gmail.com'
+        }
+      }]
+    }, {
+      tag: 'section',
+      heading: 'OPENING HOURS',
+      bodies: [{
+        type: 'text',
+        tag: 'span',
+        text: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Monday:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "9.00 AM - 22.00 PM")),
+        attr: {
+          style: {
+            display: 'flex',
+            justifyContent: 'space-between'
+          }
+        }
+      }, {
+        type: 'text',
+        tag: 'span',
+        text: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Tuesday:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "9.00 AM - 22.00 PM")),
+        attr: {
+          style: {
+            display: 'flex',
+            justifyContent: 'space-between'
+          }
+        }
+      }, {
+        type: 'text',
+        tag: 'span',
+        text: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Wednesday:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "9.00 AM - 22.00 PM")),
+        attr: {
+          style: {
+            display: 'flex',
+            justifyContent: 'space-between'
+          }
+        }
+      }, {
+        type: 'text',
+        tag: 'span',
+        text: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Thursday:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "9.00 AM - 22.00 PM")),
+        attr: {
+          style: {
+            display: 'flex',
+            justifyContent: 'space-between'
+          }
+        }
+      }, {
+        type: 'text',
+        tag: 'span',
+        text: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Friday:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "9.00 AM - 22.00 PM")),
+        attr: {
+          style: {
+            display: 'flex',
+            justifyContent: 'space-between'
+          }
+        }
+      }]
+    }]
+  })) //
   ;
 }
 
@@ -66293,17 +66642,116 @@ var MenusView = /*#__PURE__*/function (_React$Component) {
           className: "btn",
           href: this.props.AppURLs.domain + 'cart'
         })
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Our ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "highlightText"
-      }, "Menus")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         style: {
           marginBottom: '20rem'
-        }
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Sections_js__WEBPACK_IMPORTED_MODULE_2__["MenuGrid"], {
+        },
+        className: "head_section"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Our ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "highlightText"
+      }, "Menus")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Sections_js__WEBPACK_IMPORTED_MODULE_2__["MenuGrid"], {
         menus: this.state.menus,
         addBtnFunc: this.toggleAddMenu,
         removeBtnFunc: this.toggleAddMenu
-      }))) //			
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Sections_js__WEBPACK_IMPORTED_MODULE_2__["Footer"], {
+        sections: [{
+          tag: 'section',
+          heading: 'SITE MAP',
+          bodies: [{
+            type: 'link',
+            text: 'Home',
+            attr: {
+              href: this.props.AppURLs.domain
+            }
+          }, {
+            type: 'link',
+            text: 'About',
+            attr: {
+              href: '#'
+            }
+          }, {
+            type: 'link',
+            text: 'Our Menus',
+            attr: {
+              href: this.props.AppURLs.domain + 'menus'
+            }
+          }, {
+            type: 'link',
+            text: 'Contact',
+            attr: {
+              href: '#'
+            }
+          }]
+        }, {
+          tag: 'address',
+          heading: 'ADDRESS',
+          bodies: [{
+            type: 'text',
+            tag: 'p',
+            text: "44 Canal Center Plaza #200, Alexandria, VA 22314, USA"
+          }, {
+            type: 'link',
+            text: 'Email: qwerty@gmail.com',
+            attr: {
+              href: 'mailto:qwerty@gmail.com'
+            }
+          }]
+        }, {
+          tag: 'section',
+          heading: 'OPENING HOURS',
+          bodies: [{
+            type: 'text',
+            tag: 'span',
+            text: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Monday:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "9.00 AM - 22.00 PM")),
+            attr: {
+              style: {
+                display: 'flex',
+                justifyContent: 'space-between'
+              }
+            }
+          }, {
+            type: 'text',
+            tag: 'span',
+            text: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Tuesday:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "9.00 AM - 22.00 PM")),
+            attr: {
+              style: {
+                display: 'flex',
+                justifyContent: 'space-between'
+              }
+            }
+          }, {
+            type: 'text',
+            tag: 'span',
+            text: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Wednesday:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "9.00 AM - 22.00 PM")),
+            attr: {
+              style: {
+                display: 'flex',
+                justifyContent: 'space-between'
+              }
+            }
+          }, {
+            type: 'text',
+            tag: 'span',
+            text: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Thursday:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "9.00 AM - 22.00 PM")),
+            attr: {
+              style: {
+                display: 'flex',
+                justifyContent: 'space-between'
+              }
+            }
+          }, {
+            type: 'text',
+            tag: 'span',
+            text: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Friday:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "9.00 AM - 22.00 PM")),
+            attr: {
+              style: {
+                display: 'flex',
+                justifyContent: 'space-between'
+              }
+            }
+          }]
+        }]
+      })) //			
       ;
     }
   }]);
@@ -66329,6 +66777,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _UserApp_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./UserApp.js */ "./resources/js/components/UserApp.js");
+/* harmony import */ var _AdminApp_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./AdminApp.js */ "./resources/js/components/AdminApp.js");
+
 
 
 
@@ -66338,6 +66788,10 @@ if (document.getElementById('UserApp')) {
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_UserApp_js__WEBPACK_IMPORTED_MODULE_2__["default"], {
     AppURLs: AppURLs
   }), document.getElementById('UserApp'));
+} else if (document.getElementById('AdminApp')) {
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AdminApp_js__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    AppURLs: AppURLs
+  }), document.getElementById('AdminApp'));
 }
 
 /***/ }),
@@ -66405,11 +66859,40 @@ function Button_2(props) {
 
 /***/ }),
 
+/***/ "./resources/js/components/reusables/Forms.js":
+/*!****************************************************!*\
+  !*** ./resources/js/components/reusables/Forms.js ***!
+  \****************************************************/
+/*! exports provided: LARAVEL_CSRF_TOKEN, test */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LARAVEL_CSRF_TOKEN", function() { return LARAVEL_CSRF_TOKEN; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "test", function() { return test; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+function LARAVEL_CSRF_TOKEN(props) {
+  var token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "hidden",
+    name: "_token",
+    value: token
+  })) //
+  ;
+}
+function test(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "asds");
+}
+
+/***/ }),
+
 /***/ "./resources/js/components/reusables/Sections.js":
 /*!*******************************************************!*\
   !*** ./resources/js/components/reusables/Sections.js ***!
   \*******************************************************/
-/*! exports provided: Navbar, MenuGrid, Cart */
+/*! exports provided: Navbar, MenuGrid, Cart, Footer */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -66417,6 +66900,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Navbar", function() { return Navbar; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenuGrid", function() { return MenuGrid; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Cart", function() { return Cart; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Footer", function() { return Footer; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -66641,6 +67125,87 @@ function Cart(props) {
   }))))) //
   ;
 }
+var Footer = /*#__PURE__*/function (_React$Component2) {
+  _inherits(Footer, _React$Component2);
+
+  var _super2 = _createSuper(Footer);
+
+  function Footer(props) {
+    var _this3;
+
+    _classCallCheck(this, Footer);
+
+    _this3 = _super2.call(this, props);
+    _this3.createLink = _this3.createLink.bind(_assertThisInitialized(_this3));
+    _this3.createParagraph = _this3.createParagraph.bind(_assertThisInitialized(_this3));
+    _this3.createSection = _this3.createSection.bind(_assertThisInitialized(_this3));
+    return _this3;
+  }
+
+  _createClass(Footer, [{
+    key: "createLink",
+    value: function createLink(text, attr, events, key) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", _extends({
+        className: "link"
+      }, attr, events, {
+        key: key
+      }), text); //
+    }
+  }, {
+    key: "createParagraph",
+    value: function createParagraph(tag, text, attr, key) {
+      var Tag = tag;
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Tag, _extends({
+        className: "text"
+      }, attr, {
+        key: key
+      }), text); //
+    }
+  }, {
+    key: "createSection",
+    value: function createSection(tag, heading, bodies, key) {
+      var _this4 = this;
+
+      var Tag = tag;
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Tag, {
+        className: "section",
+        key: key
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", {
+        className: "heading"
+      }, heading), bodies.map(function (body, key) {
+        switch (body.type) {
+          case 'text':
+            return _this4.createParagraph(body.tag, body.text, body.attr, key);
+            break;
+
+          case 'link':
+            return _this4.createLink(body.text, body.attr, body.events, key);
+            break;
+
+          default:
+            return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+              key: key
+            });
+        }
+      }))) //
+      ;
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this5 = this;
+
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", {
+        className: "footer rows_container"
+      }, this.props.sections.map(function (section, key) {
+        return _this5.createSection(section.tag, section.heading, section.bodies, key);
+      }))) //
+      ;
+    }
+  }]);
+
+  return Footer;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /***/ }),
 

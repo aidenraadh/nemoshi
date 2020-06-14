@@ -22,6 +22,10 @@ h1,h2,h3,h4,h5,h6{
 	font-weight: normal;
 }
 
+address{
+	font-style: normal;
+}
+
 a{
 	text-decoration: none;
 	cursor: pointer;
@@ -455,6 +459,52 @@ select{
 	text-align: center;
 }
 
+.footer{
+	flex-wrap: wrap;
+	padding: 6rem 2.5rem;
+	width: 100%;
+	font-family: 'Barlow', sans-serif;
+	font-size: 1.6rem;
+	color: #FFFFFF;
+	background-color: #16171d;
+}
+
+.footer a, .footer button{
+	font-family: 'Barlow', sans-serif;
+	color: #FFFFFF;
+}
+
+.footer .section{
+	padding: 0 2.5rem 5rem;
+	width: 25%;
+}
+
+.footer .heading{
+	width: 100%;
+	padding: 1rem 0;
+	border-bottom: 1px solid #6f6a6a;
+	text-align: left;
+	font-size: 1.6rem;
+	font-weight: 600;
+}
+
+.footer .text{
+	display: block;
+	width: 100%;
+	padding: 1rem 0;
+}
+
+.footer .link{
+	display: block;
+	width: 100%;
+	padding: 1rem 0;
+	transition: color 0.3s ease;
+}
+
+.footer .link:hover{
+	color: #f16d07;
+}
+
 #UserApp.landing_view .head_section{
 	width: 100%;
 	min-height: 100vh;
@@ -579,6 +629,14 @@ select{
 		width: 86%;
 		grid-template-columns: 100%;
 		grid-row-gap: 1%;
+	}
+
+	.footer{
+		flex-wrap: wrap;
+	}
+
+	.footer .section{
+		width: 50%;
 	}
 	.cart table{
 		width: 86%;

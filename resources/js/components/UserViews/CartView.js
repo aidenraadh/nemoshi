@@ -1,6 +1,6 @@
 import React from 'react';
 import {Button_1} from './../reusables/Buttons.js';
-import {Navbar,Cart} from './../reusables/Sections.js';
+import {Navbar,Cart, Footer} from './../reusables/Sections.js';
 import {AJAXPostRequest} from './../reusables/AJAXRequest.js';
 
 export default class CartView extends React.Component{
@@ -106,12 +106,15 @@ export default class CartView extends React.Component{
 			/>
 			{(this.state.cart.length !== 0 ?
 			<>
-			<h1>Your <span className="highlightText">Cart</span></h1>
-			<Cart
-				cart = {this.state.cart}
-				addBtnFunc = {this.toggleAddMenu}
-				removeBtnFunc = {this.toggleAddMenu}
-			/></> :
+			<div className="head_section">
+				<h1>Your <span className="highlightText">Cart</span></h1>
+				<Cart
+					cart = {this.state.cart}
+					addBtnFunc = {this.toggleAddMenu}
+					removeBtnFunc = {this.toggleAddMenu}
+				/>				
+			</div>
+			</> :
 			<article style={{width: '100%', minHeight: '60vh',
 					fontFamily: 'Barlow, sans-serif', fontWeight: '400', fontSize: '2rem',
 					color: '#666666',
@@ -125,7 +128,86 @@ export default class CartView extends React.Component{
 				/>
 			</article>
 
-			)}	
+			)}
+
+			<Footer
+				sections = {[
+					{
+						tag: 'section',
+						heading: 'SITE MAP',
+						bodies: [
+							{type: 'link', text: 'Home', attr: {href: this.props.AppURLs.domain}},
+							{type: 'link', text: 'About', attr: {href: '#'}},
+							{type: 'link', text: 'Our Menus', attr: {href: this.props.AppURLs.domain+'menus'}},
+							{type: 'link', text: 'Contact', attr: {href: '#'}},
+						]
+					},
+					{
+						tag: 'address',
+						heading: 'ADDRESS',
+						bodies: [
+							{
+								type: 'text',
+								tag: 'p',
+								text: "44 Canal Center Plaza #200, Alexandria, VA 22314, USA",
+							},
+							{type: 'link', text: 'Email: qwerty@gmail.com', attr: {href: 'mailto:qwerty@gmail.com'}},
+						]
+					},
+					{
+						tag: 'section',
+						heading: 'OPENING HOURS',
+						bodies: [
+							{
+								type: 'text',
+								tag: 'span',
+								text: (<>
+									<span>Monday:</span>
+									<span>9.00 AM - 22.00 PM</span>
+								</>),
+								attr: {style: {display: 'flex', justifyContent: 'space-between'}}
+							},
+							{
+								type: 'text',
+								tag: 'span',
+								text: (<>
+									<span>Tuesday:</span>
+									<span>9.00 AM - 22.00 PM</span>
+								</>),
+								attr: {style: {display: 'flex', justifyContent: 'space-between'}}
+							},
+							{
+								type: 'text',
+								tag: 'span',
+								text: (<>
+									<span>Wednesday:</span>
+									<span>9.00 AM - 22.00 PM</span>
+								</>),
+								attr: {style: {display: 'flex', justifyContent: 'space-between'}}
+							},
+							{
+								type: 'text',
+								tag: 'span',
+								text: (<>
+									<span>Thursday:</span>
+									<span>9.00 AM - 22.00 PM</span>
+								</>),
+								attr: {style: {display: 'flex', justifyContent: 'space-between'}}
+							},
+							{
+								type: 'text',
+								tag: 'span',
+								text: (<>
+									<span>Friday:</span>
+									<span>9.00 AM - 22.00 PM</span>
+								</>),
+								attr: {style: {display: 'flex', justifyContent: 'space-between'}}
+							},																								
+						]
+					},				
+				]}
+			/>
+
 			</>//
 		);
 	}

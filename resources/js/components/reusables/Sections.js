@@ -181,3 +181,69 @@ export function Cart(props){
 		</>//
 	);	
 }
+
+export class Footer extends React.Component{
+	constructor(props){
+		super(props);
+
+		this.createLink = this.createLink.bind(this);
+		this.createParagraph = this.createParagraph.bind(this);
+		this.createSection = this.createSection.bind(this);
+	}
+
+	createLink(text, attr, events, key){
+		return (
+			<a className="link" {...attr} {...events} key={key}>{text}</a>
+		);//
+	}
+
+	createParagraph(tag, text, attr, key){
+		const Tag = tag;
+		return (
+			<Tag className="text" {...attr} key={key}>
+				{text}
+			</Tag>
+		);//
+	}
+
+	createSection(tag, heading, bodies, key){
+		const Tag = tag;
+		return (
+			<>
+			<Tag className="section" key={key}>
+				<h6 className="heading">{heading}</h6>
+				{bodies.map((body, key) => {
+
+				switch(body.type){
+
+				case 'text': return (
+				this.createParagraph(body.tag, body.text, body.attr, key)
+				); break;
+
+				case 'link': return(
+				this.createLink(body.text, body.attr, body.events, key)
+				); break;
+
+				default: return (<span key={key}></span>);
+				}
+
+				})}
+			</Tag>
+			</>//
+		);
+	}
+
+	render(){
+		return (
+			<>
+			<footer className="footer rows_container">
+				{this.props.sections.map((section, key) => (
+
+				this.createSection(section.tag, section.heading, section.bodies, key)
+
+				))}			
+			</footer>			
+			</>//
+		);
+	}
+}

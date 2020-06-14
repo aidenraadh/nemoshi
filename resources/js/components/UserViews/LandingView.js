@@ -1,6 +1,6 @@
 import React from 'react';
 import {Button_1} from './../reusables/Buttons.js'
-import {Navbar, MenuGrid, Cart} from './../reusables/Sections.js'
+import {Navbar, Footer} from './../reusables/Sections.js'
 
 export default function LandingView(props){
 	return (
@@ -40,6 +40,84 @@ export default function LandingView(props){
 			</span>			
 			</p>
 		</div>
+
+		<Footer
+			sections = {[
+				{
+					tag: 'section',
+					heading: 'SITE MAP',
+					bodies: [
+						{type: 'link', text: 'Home', attr: {href: props.AppURLs.domain}},
+						{type: 'link', text: 'About', attr: {href: '#'}},
+						{type: 'link', text: 'Our Menus', attr: {href: props.AppURLs.domain+'menus'}},
+						{type: 'link', text: 'Contact', attr: {href: '#'}},
+					]
+				},
+				{
+					tag: 'address',
+					heading: 'ADDRESS',
+					bodies: [
+						{
+							type: 'text',
+							tag: 'p',
+							text: "44 Canal Center Plaza #200, Alexandria, VA 22314, USA",
+						},
+						{type: 'link', text: 'Email: qwerty@gmail.com', attr: {href: 'mailto:qwerty@gmail.com'}},
+					]
+				},
+				{
+					tag: 'section',
+					heading: 'OPENING HOURS',
+					bodies: [
+						{
+							type: 'text',
+							tag: 'span',
+							text: (<>
+								<span>Monday:</span>
+								<span>9.00 AM - 22.00 PM</span>
+							</>),
+							attr: {style: {display: 'flex', justifyContent: 'space-between'}}
+						},
+						{
+							type: 'text',
+							tag: 'span',
+							text: (<>
+								<span>Tuesday:</span>
+								<span>9.00 AM - 22.00 PM</span>
+							</>),
+							attr: {style: {display: 'flex', justifyContent: 'space-between'}}
+						},
+						{
+							type: 'text',
+							tag: 'span',
+							text: (<>
+								<span>Wednesday:</span>
+								<span>9.00 AM - 22.00 PM</span>
+							</>),
+							attr: {style: {display: 'flex', justifyContent: 'space-between'}}
+						},
+						{
+							type: 'text',
+							tag: 'span',
+							text: (<>
+								<span>Thursday:</span>
+								<span>9.00 AM - 22.00 PM</span>
+							</>),
+							attr: {style: {display: 'flex', justifyContent: 'space-between'}}
+						},
+						{
+							type: 'text',
+							tag: 'span',
+							text: (<>
+								<span>Friday:</span>
+								<span>9.00 AM - 22.00 PM</span>
+							</>),
+							attr: {style: {display: 'flex', justifyContent: 'space-between'}}
+						},																								
+					]
+				},				
+			]}
+		/>
 		</>//
 	);
 }

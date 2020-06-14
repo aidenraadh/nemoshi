@@ -4,10 +4,12 @@
 
 @section('content')
 
-<div id="AdminApp" class="App register_view rows_container center align_center">
+<div id="AdminApp" class="App register_view">
     
 </div>
 
-<script type="application/json" id="AppURLs"><?= $AppURLs ?></script>
+<script type="application/json" id="AppURLs">
+	<?= ($AppURLs ? json_encode($AppURLs, true) : '[]') ?>
+</script>
 
 @endsection

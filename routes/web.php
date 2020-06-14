@@ -23,34 +23,20 @@ Route::get('/', function () {
     ]);
 });
 
-Auth::routes();
-
 Route::get('/test', 'TestController@test');
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/menus', 'MenusController@getMenus');
 Route::post('/menus/toggleadd', 'MenusController@toggleAddMenu');
 
 Route::get('/cart', 'MenusController@getCart');
 
+/*Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');*/
 
 Route::prefix('admin')->group(function () {
 	Route::get('home', 'AdminControllers\AdminPanelController@index')
 	->middleware('auth:admins')->name('admin/home');
-	
-	Route::get('fonts/upload', 'AdminControllers\AdminPanelController@uploadFont')
-	->middleware('auth:admins');
-	Route::post('fonts/store', 'AdminControllers\AdminPanelController@storeFont')
-	->middleware('auth:admins');
-
-	Route::post('fonts/delete', 'AdminControllers\AdminPanelController@deleteFonts')
-	->middleware('auth:admins');
-	
-	Route::get('fonts/edit/{font_id}', 'AdminControllers\AdminPanelController@editFont')
-	->middleware('auth:admins');	
-	Route::post('fonts/update', 'AdminControllers\AdminPanelController@updateFont')
-	->middleware('auth:admins');
 
 	Route::get('login', 'AdminControllers\Auth\LoginController@showLoginForm')->name('admin/login');
 	Route::post('login', 'AdminControllers\Auth\LoginController@login');
