@@ -81,7 +81,7 @@ export default class MenusView extends React.Component{
 					attr: {href: this.props.AppURLs.domain}, text: 'HOME'
 				}},
 				{type: 'link', data:{
-					attr: {href: '#'}, text: 'ABOUT'
+					attr: {href: this.props.AppURLs.domain+'about'}, text: 'ABOUT'
 				}},				
 				{type: 'link', data:{
 					attr: {href: this.props.AppURLs.domain+'menus'}, text: 'OUR MENUS'
@@ -97,7 +97,7 @@ export default class MenusView extends React.Component{
 				<a className="btn" href={this.props.AppURLs.domain+'cart'}></a>
 			}
 		/>
-		<div style={{marginBottom: '20rem'}} className="head_section">
+		<div className="section_padding">
 			<h1>Our <span className="highlightText">Menus</span></h1>
 			<MenuGrid
 				menus = {this.state.menus}

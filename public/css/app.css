@@ -57,6 +57,12 @@ select{
 .rows_container{
 	display: flex;
 }
+
+.rows_container.reverse{
+	display: flex;
+	flex-direction: row-reverse;
+}
+
 .rows_container.x_start{
 	justify-content: flex-start;
 }
@@ -82,6 +88,11 @@ select{
 	flex-direction: column;
 }
 
+.cols_container.reverse{
+	display: flex;
+	flex-direction: column-reverse;
+}
+
 .cols_container.x_start{
 	justify-content: flex-start;
 }
@@ -100,6 +111,10 @@ select{
 
 .cols_container.y_center{
 	align-items: center;
+}
+
+.section_padding{
+	padding: 12rem 5.8vw;
 }
 
 .btn_1{
@@ -137,10 +152,6 @@ select{
 .Carousel .display, .Carousel .item{
     width: 100%;
     flex-shrink: 0;
-}
-
-.head_section{
-	padding-top: 12rem;
 }
 
 .navbar{
@@ -317,12 +328,11 @@ select{
 	display: grid;
 	grid-template-columns: 32% 32% 32%;
 	grid-column-gap: 2.6%;
-	grid-row-gap: 2%;
-	border-radius: 2px;
 }
 
 .menuGrid .menu{
 	display: flex;
+	margin-bottom: 7%;
 	flex-direction: column;
 	min-height: 2rem;
 	align-items: center;
@@ -459,6 +469,49 @@ select{
 	text-align: center;
 }
 
+.head_section{
+	width: 100%;
+	min-height: 100vh;
+	color: #FFFFFF;
+}
+
+.head_section .heading{
+	width: 50%;
+	margin-bottom: 1rem;
+	font-family: 'Lobster Two', sans-serif;
+	font-size: 3.6rem;
+}
+
+.head_section .body{
+	width: 50%;
+	font-family: 'Barlow', sans-serif;
+	font-size: 1.8rem;
+	font-weight: 400;
+	line-height: 2.4rem;
+}
+
+.section_1 > div{
+	width: 45%;
+}
+
+.section_1 .heading{
+	margin-bottom: 1rem;
+	font-family: "Lobster Two", sans-serif;
+	color: #363636;
+	font-size: 3rem;
+}
+
+.section_1 .body{
+	font-family: "Barlow", sans-serif;
+	font-size: 1.6rem;
+	line-height: 2.4rem;
+	color: #666666;
+}
+
+.section_1 .img{
+	width: 45%;
+}
+
 .footer{
 	flex-wrap: wrap;
 	padding: 6rem 2.5rem;
@@ -506,41 +559,15 @@ select{
 }
 
 #UserApp.landing_view .head_section{
-	width: 100%;
-	min-height: 100vh;
 	background: url('../images/bg_5.jpg') no-repeat scroll 0 0;
 	background-size: cover;
-}
-
-#UserApp.landing_view h1{
-	width: 50%;
-	padding-left: 4rem;
-	font-family: 'Lobster Two', sans-serif;
-	font-size: 2.4rem;
-	text-align: left;
-	color: #f16d07;
-}
-
-#UserApp.landing_view h1 > span{
-	display: block;
-	font-size: 3.8rem;
-	color: #FFFFFF;
-}
-
-#UserApp.landing_view .head_section p{
-	width: 50%;
-	padding-left: 4rem;	
-	font-family: 'Barlow', sans-serif;
-	font-weight: 400;
-	font-size: 1.8em;
-	color: #FFFFFF;
 }
 
 #UserApp.menus_view h1{
 	width: 100%;
 	margin-bottom: 3rem;
 	font-family: 'Lobster Two', sans-serif;
-	font-size: 2.8rem;
+	font-size: 3rem;
 	text-align: center;
 	color: #363636;
 }
@@ -549,7 +576,7 @@ select{
 	width: 100%;
 	margin-bottom: 3rem;
 	font-family: 'Lobster Two', sans-serif;
-	font-size: 2.8rem;
+	font-size: 3rem;
 	text-align: center;
 	color: #363636;
 }
@@ -609,26 +636,51 @@ select{
 	}
 	.menuGrid{
 		grid-template-columns: 48.4% 48.4%;
-		grid-row-gap: 1.2%;
-	}	
+	}
+	.menuGrid .menu{
+		margin-bottom: 6%;
+	}
 }	
 
 
 @media only screen and (max-width: 800px) {
+	.section_padding{
+		padding: 12rem 4vw;
+	}
 	.menuGrid{
 		width: 88%;
-		grid-row-gap: 1.2%;
 	}
+	.menuGrid .menu{
+		margin-bottom: 5%;
+	}	
 	.cart table{
 		width: 88%;
-	}	
+	}
+
+	.section_1.rows_container.x_space_between{
+		justify-content: center;
+		flex-wrap: wrap;
+		text-align: center;
+	}
+
+	.section_1 > div{
+		order: 2;
+		width: 100%;
+	}
+
+	.section_1 > .img{
+		margin-bottom: 2rem;
+		width: 30rem;
+		height: 30rem;
+		order: 1;
+	}
+
 }
 
 @media only screen and (max-width: 700px) {
 	.menuGrid{
 		width: 86%;
 		grid-template-columns: 100%;
-		grid-row-gap: 1%;
 	}
 
 	.footer{
@@ -647,6 +699,9 @@ select{
 }
 
 @media only screen and (max-width: 500px) {
+	.section_padding{
+		padding: 12rem 3vw;
+	}	
 	.menuGrid{
 		width: 90%;
 	}	

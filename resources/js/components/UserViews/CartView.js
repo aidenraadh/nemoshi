@@ -78,7 +78,7 @@ export default class CartView extends React.Component{
 						attr: {href: this.props.AppURLs.domain}, text: 'HOME'
 					}},
 					{type: 'link', data:{
-						attr: {href: '#'}, text: 'ABOUT'
+						attr: {href: this.props.AppURLs.domain+'about'}, text: 'ABOUT'
 					}},				
 					{type: 'link', data:{
 						attr: {href: this.props.AppURLs.domain+'menus'}, text: 'OUR MENUS'
@@ -106,7 +106,7 @@ export default class CartView extends React.Component{
 			/>
 			{(this.state.cart.length !== 0 ?
 			<>
-			<div className="head_section">
+			<div className="section_padding">
 				<h1>Your <span className="highlightText">Cart</span></h1>
 				<Cart
 					cart = {this.state.cart}

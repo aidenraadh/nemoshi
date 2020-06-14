@@ -23,6 +23,16 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('about', function () {
+    return view('about', [
+    	'AppURLs' => [
+    		'domain' => config('app.url'),
+    		'images' => asset('images').'/',
+    		'icons' => asset('images/icons').'/',
+    	],
+    ]);
+});
+
 Route::get('/test', 'TestController@test');
 
 Route::get('/menus', 'MenusController@getMenus');

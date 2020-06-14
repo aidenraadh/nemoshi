@@ -2,7 +2,7 @@ import React from 'react';
 import {Button_1} from './../reusables/Buttons.js'
 import {Navbar, Footer} from './../reusables/Sections.js'
 
-export default function LandingView(props){
+export default function AboutView(props){
 	return (
 		<>
 		<Navbar
@@ -28,32 +28,44 @@ export default function LandingView(props){
 				<a className="btn" href={props.AppURLs.domain+'cart'}></a>
 			}
 		/>
-		<div className="cols_container x_center y_left head_section section_padding">
-			<h1 className="heading">
-				<span className="highlightText" style={{fontSize: '2.6rem', display: 'block'}}>
-					Welcome to Asahi
-				</span>
-				Good food is to be <span className="highlightText">enjoyed</span> food very beautiful in itse
-			</h1>
-			<p className="body">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-				sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Quis.					
-			</p>
-		</div>
 
-		<article className="rows_container x_space_between section_padding section_1">
-			<div>
-				<h2 className="heading">
-					A History Has Written For Asahi Explore 
-					<span className="highlightText">more Our Story</span>
-				</h2>
-				<p className="body">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua.
-				</p>
-			</div>
-			<img className="img" src={props.AppURLs.images+'2.jpg'} />
-		</article>
+		<article className="section_padding">
+			<section className="rows_container x_space_between section_1" style={{marginBottom: '8rem'}}>
+				<div>
+					<h2 className="heading">
+						A History Has Written For Asahi Explore 
+						<span className="highlightText">more Our Story</span>
+					</h2>
+					<p className="body">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	
+					</p>
+				</div>
+				<img className="img" src={props.AppURLs.images+'1.jpg'} />
+			</section>
+			<section className="rows_container reverse x_space_between section_1">
+				<div>
+					<h2 className="heading">
+						A warm & Friendly Atmosphere With a <span className="highlightText">event a suppor</span>
+					</h2>
+					<p className="body">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	
+					</p>
+				</div>
+				<img className="img" src={props.AppURLs.images+'3.jpg'} />
+			</section>			
+		</article>	
 
 		<Footer
 			sections = {[

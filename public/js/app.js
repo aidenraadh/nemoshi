@@ -65966,8 +65966,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _UserViews_LandingView_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./UserViews/LandingView.js */ "./resources/js/components/UserViews/LandingView.js");
-/* harmony import */ var _UserViews_MenusView_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./UserViews/MenusView.js */ "./resources/js/components/UserViews/MenusView.js");
+/* harmony import */ var _UserViews_AboutView_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./UserViews/AboutView.js */ "./resources/js/components/UserViews/AboutView.js");
 /* harmony import */ var _UserViews_CartView_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./UserViews/CartView.js */ "./resources/js/components/UserViews/CartView.js");
+/* harmony import */ var _UserViews_MenusView_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./UserViews/MenusView.js */ "./resources/js/components/UserViews/MenusView.js");
+
 
 
 
@@ -65978,8 +65980,12 @@ function UserApp(props) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_UserViews_LandingView_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
       AppURLs: props.AppURLs
     });
+  } else if (App.classList.contains('about_view')) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_UserViews_AboutView_js__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      AppURLs: props.AppURLs
+    });
   } else if (App.classList.contains('menus_view')) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_UserViews_MenusView_js__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_UserViews_MenusView_js__WEBPACK_IMPORTED_MODULE_4__["default"], {
       AppURLs: props.AppURLs,
       menus: JSON.parse(document.getElementById('menus').innerHTML),
       orderedMenus: JSON.parse(document.getElementById('orderedMenus').innerHTML),
@@ -65993,6 +65999,202 @@ function UserApp(props) {
       menusImgPath: JSON.parse(document.getElementById('menusImgPath').innerHTML)
     });
   }
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/UserViews/AboutView.js":
+/*!********************************************************!*\
+  !*** ./resources/js/components/UserViews/AboutView.js ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return AboutView; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _reusables_Buttons_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../reusables/Buttons.js */ "./resources/js/components/reusables/Buttons.js");
+/* harmony import */ var _reusables_Sections_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../reusables/Sections.js */ "./resources/js/components/reusables/Sections.js");
+
+
+
+function AboutView(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Sections_js__WEBPACK_IMPORTED_MODULE_2__["Navbar"], {
+    brandImg: props.AppURLs.icons + 'logo.png',
+    navbarLinks: [{
+      type: 'link',
+      data: {
+        attr: {
+          href: props.AppURLs.domain
+        },
+        text: 'HOME'
+      }
+    }, {
+      type: 'link',
+      data: {
+        attr: {
+          href: props.AppURLs.domain + 'about'
+        },
+        text: 'ABOUT'
+      }
+    }, {
+      type: 'link',
+      data: {
+        attr: {
+          href: props.AppURLs.domain + 'menus'
+        },
+        text: 'OUR MENUS'
+      }
+    }, {
+      type: 'link',
+      data: {
+        attr: {
+          href: '#'
+        },
+        text: 'BLOG'
+      }
+    }, {
+      type: 'link',
+      data: {
+        attr: {
+          href: '#'
+        },
+        text: 'CONTACT'
+      }
+    }],
+    navbarActions: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      className: "btn",
+      href: props.AppURLs.domain + 'cart'
+    })
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("article", {
+    className: "section_padding"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+    className: "rows_container x_space_between section_1",
+    style: {
+      marginBottom: '8rem'
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    className: "heading"
+  }, "A History Has Written For Asahi Explore", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "highlightText"
+  }, "more Our Story")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "body"
+  }, "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "img",
+    src: props.AppURLs.images + '1.jpg'
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+    className: "rows_container reverse x_space_between section_1"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    className: "heading"
+  }, "A warm & Friendly Atmosphere With a ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "highlightText"
+  }, "event a suppor")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "body"
+  }, "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "img",
+    src: props.AppURLs.images + '3.jpg'
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Sections_js__WEBPACK_IMPORTED_MODULE_2__["Footer"], {
+    sections: [{
+      tag: 'section',
+      heading: 'SITE MAP',
+      bodies: [{
+        type: 'link',
+        text: 'Home',
+        attr: {
+          href: props.AppURLs.domain
+        }
+      }, {
+        type: 'link',
+        text: 'About',
+        attr: {
+          href: '#'
+        }
+      }, {
+        type: 'link',
+        text: 'Our Menus',
+        attr: {
+          href: props.AppURLs.domain + 'menus'
+        }
+      }, {
+        type: 'link',
+        text: 'Contact',
+        attr: {
+          href: '#'
+        }
+      }]
+    }, {
+      tag: 'address',
+      heading: 'ADDRESS',
+      bodies: [{
+        type: 'text',
+        tag: 'p',
+        text: "44 Canal Center Plaza #200, Alexandria, VA 22314, USA"
+      }, {
+        type: 'link',
+        text: 'Email: qwerty@gmail.com',
+        attr: {
+          href: 'mailto:qwerty@gmail.com'
+        }
+      }]
+    }, {
+      tag: 'section',
+      heading: 'OPENING HOURS',
+      bodies: [{
+        type: 'text',
+        tag: 'span',
+        text: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Monday:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "9.00 AM - 22.00 PM")),
+        attr: {
+          style: {
+            display: 'flex',
+            justifyContent: 'space-between'
+          }
+        }
+      }, {
+        type: 'text',
+        tag: 'span',
+        text: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Tuesday:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "9.00 AM - 22.00 PM")),
+        attr: {
+          style: {
+            display: 'flex',
+            justifyContent: 'space-between'
+          }
+        }
+      }, {
+        type: 'text',
+        tag: 'span',
+        text: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Wednesday:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "9.00 AM - 22.00 PM")),
+        attr: {
+          style: {
+            display: 'flex',
+            justifyContent: 'space-between'
+          }
+        }
+      }, {
+        type: 'text',
+        tag: 'span',
+        text: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Thursday:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "9.00 AM - 22.00 PM")),
+        attr: {
+          style: {
+            display: 'flex',
+            justifyContent: 'space-between'
+          }
+        }
+      }, {
+        type: 'text',
+        tag: 'span',
+        text: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Friday:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "9.00 AM - 22.00 PM")),
+        attr: {
+          style: {
+            display: 'flex',
+            justifyContent: 'space-between'
+          }
+        }
+      }]
+    }]
+  })) //
+  ;
 }
 
 /***/ }),
@@ -66127,7 +66329,7 @@ var CartView = /*#__PURE__*/function (_React$Component) {
           type: 'link',
           data: {
             attr: {
-              href: '#'
+              href: this.props.AppURLs.domain + 'about'
             },
             text: 'ABOUT'
           }
@@ -66168,7 +66370,7 @@ var CartView = /*#__PURE__*/function (_React$Component) {
           }
         })
       }), this.state.cart.length !== 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "head_section"
+        className: "section_padding"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Your ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "highlightText"
       }, "Cart")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Sections_js__WEBPACK_IMPORTED_MODULE_2__["Cart"], {
@@ -66338,7 +66540,7 @@ function LandingView(props) {
       type: 'link',
       data: {
         attr: {
-          href: '#'
+          href: props.AppURLs.domain + 'about'
         },
         text: 'ABOUT'
       }
@@ -66372,10 +66574,31 @@ function LandingView(props) {
       href: props.AppURLs.domain + 'cart'
     })
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "cols_container x_center y_left head_section"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Welcome to Asahi", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "orange"
-  }, "Good food"), " is to be enjoyed food very beautiful in itse")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Quis."))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Sections_js__WEBPACK_IMPORTED_MODULE_2__["Footer"], {
+    className: "cols_container x_center y_left head_section section_padding"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    className: "heading"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "highlightText",
+    style: {
+      fontSize: '2.6rem',
+      display: 'block'
+    }
+  }, "Welcome to Asahi"), "Good food is to be ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "highlightText"
+  }, "enjoyed"), " food very beautiful in itse"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "body"
+  }, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Quis.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("article", {
+    className: "rows_container x_space_between section_padding section_1"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    className: "heading"
+  }, "A History Has Written For Asahi Explore", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "highlightText"
+  }, "more Our Story")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "body"
+  }, "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "img",
+    src: props.AppURLs.images + '2.jpg'
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Sections_js__WEBPACK_IMPORTED_MODULE_2__["Footer"], {
     sections: [{
       tag: 'section',
       heading: 'SITE MAP',
@@ -66609,7 +66832,7 @@ var MenusView = /*#__PURE__*/function (_React$Component) {
           type: 'link',
           data: {
             attr: {
-              href: '#'
+              href: this.props.AppURLs.domain + 'about'
             },
             text: 'ABOUT'
           }
@@ -66643,10 +66866,7 @@ var MenusView = /*#__PURE__*/function (_React$Component) {
           href: this.props.AppURLs.domain + 'cart'
         })
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        style: {
-          marginBottom: '20rem'
-        },
-        className: "head_section"
+        className: "section_padding"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Our ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "highlightText"
       }, "Menus")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Sections_js__WEBPACK_IMPORTED_MODULE_2__["MenuGrid"], {
