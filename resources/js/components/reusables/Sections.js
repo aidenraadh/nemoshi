@@ -193,14 +193,14 @@ export class Footer extends React.Component{
 
 	createLink(text, attr, events, key){
 		return (
-			<a className="link" {...attr} {...events} key={key}>{text}</a>
+			<a className="link light" {...attr} {...events} key={key}>{text}</a>
 		);//
 	}
 
 	createParagraph(tag, text, attr, key){
 		const Tag = tag;
 		return (
-			<Tag className="text" {...attr} key={key}>
+			<Tag className="text body light" {...attr} key={key}>
 				{text}
 			</Tag>
 		);//
@@ -211,7 +211,7 @@ export class Footer extends React.Component{
 		return (
 			<>
 			<Tag className="section" key={key}>
-				<h6 className="heading">{heading}</h6>
+				<h6 className="heading light">{heading}</h6>
 				{bodies.map((body, key) => {
 
 				switch(body.type){

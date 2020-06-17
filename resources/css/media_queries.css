@@ -1,0 +1,154 @@
+@media only screen and (min-width: 1281px) {
+  html{
+    font-size: 0.78125vw;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+	html{
+		font-size: calc(10px -  ( (1280px - 100vw) *  0.00138 ) );
+	}
+}
+
+@media only screen and (max-width: 1100px) {
+}
+
+@media only screen and (max-width: 1000px) {
+}
+
+@media only screen and (max-width: 900px){
+	.navbar{
+		justify-content: space-between;
+	}
+
+	.navbarLinks{
+		width: 50vw;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		position: fixed; top: 0; right: 0;
+		height: 100vh;
+		background-color: #1b1b1b;
+		transform: translateX(100%);
+		transition: transform 0.3s ease;
+	}
+
+	.navbarLinks.shown{
+		transform: translateX(0);
+	}
+
+	.navbarLinks ul{
+		display: block;
+		width: 100%;
+	}
+	.navbarActions{
+		flex-shrink: 1;
+	}
+	.opnNavbar{
+		display: inline-flex;
+		flex-direction: column;
+	}
+	.clsNavbar{
+		display: block;
+	}
+	.menuGrid{
+		grid-template-columns: 48.4% 48.4%;
+	}
+	.menuGrid .menu{
+		margin-bottom: 6%;
+	}
+}	
+
+
+@media only screen and (max-width: 800px) {
+	.section_padding{
+		padding: 12rem 4vw;
+	}
+	.menuGrid{
+		width: 88%;
+	}
+	.menuGrid .menu{
+		margin-bottom: 5%;
+	}	
+	.cart table{
+		width: 88%;
+	}
+
+	.section_1.rows_container.x_space_between{
+		flex-flow: column;
+		justify-content: center;
+		flex-wrap: wrap;
+		text-align: center;
+	}
+
+	.section_1 > div{
+		order: 2;
+		width: 100%;
+	}
+
+	.section_1 > .img{
+		margin-bottom: 2rem;
+		width: 100%;
+		order: 1;
+	}
+
+	.section_1 > .img > img{
+		width: 38rem;
+		max-height: 38rem;
+	}
+
+	.section_1 .img_grid{
+		margin-bottom: 2rem;
+		width: 100%;
+		order: 1;
+	}
+
+	.section_1 .img_grid > .portrait{
+		width: 66%;
+		height: 36rem;
+		align-self: flex-start;
+	}
+
+	.section_1 .img_grid > .square{
+		width: 30%;
+	}
+
+	.section_1 .img_grid > .square > img{
+		margin-bottom: 2rem;
+		height: 17rem;
+	}
+
+}
+
+@media only screen and (max-width: 700px) {
+	.menuGrid{
+		width: 86%;
+		grid-template-columns: 100%;
+	}
+
+	.footer{
+		flex-wrap: wrap;
+	}
+
+	.footer .section{
+		width: 50%;
+	}
+	.cart table{
+		width: 86%;
+	}	
+}
+
+@media only screen and (max-width: 600px) {	
+}
+
+@media only screen and (max-width: 500px) {
+	.section_padding{
+		padding: 12rem 3vw;
+	}	
+	.menuGrid{
+		width: 90%;
+	}	
+	.cart table{
+		width: 90%;
+	}
+}

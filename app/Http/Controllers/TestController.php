@@ -10,6 +10,6 @@ class TestController extends Controller{
 
 	public function test(Request $request){
 		Auth::guard('admins')->logout();
-		return 'asdf';
+		dd(Storage::disk('public')->allFiles('menus'));
 	}
 }

@@ -12,4 +12,10 @@ const mix = require('laravel-mix');
  */
 
 mix.react('resources/js/app.js', 'public/js')
-    .styles(['resources/css/app.css'], 'public/css/app.css');
+    .styles([
+    	'resources/css/main.css',
+    	'resources/css/buttons.css',
+    	'resources/css/sections.css',
+    	'resources/css/custom_sections.css',
+    	'resources/css/media_queries.css',
+    ], 'public/css/app.css');

@@ -65969,6 +65969,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _UserViews_AboutView_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./UserViews/AboutView.js */ "./resources/js/components/UserViews/AboutView.js");
 /* harmony import */ var _UserViews_CartView_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./UserViews/CartView.js */ "./resources/js/components/UserViews/CartView.js");
 /* harmony import */ var _UserViews_MenusView_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./UserViews/MenusView.js */ "./resources/js/components/UserViews/MenusView.js");
+/* harmony import */ var _reusables_Sections_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./reusables/Sections.js */ "./resources/js/components/reusables/Sections.js");
+/* harmony import */ var _reusables_SVGIcons_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./reusables/SVGIcons.js */ "./resources/js/components/reusables/SVGIcons.js");
+
+
 
 
 
@@ -65976,52 +65980,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var App = document.getElementById('UserApp');
 function UserApp(props) {
-  if (App.classList.contains('landing_view')) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_UserViews_LandingView_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      AppURLs: props.AppURLs
-    });
-  } else if (App.classList.contains('about_view')) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_UserViews_AboutView_js__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      AppURLs: props.AppURLs
-    });
-  } else if (App.classList.contains('menus_view')) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_UserViews_MenusView_js__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      AppURLs: props.AppURLs,
-      menus: JSON.parse(document.getElementById('menus').innerHTML),
-      orderedMenus: JSON.parse(document.getElementById('orderedMenus').innerHTML),
-      menusImgPath: JSON.parse(document.getElementById('menusImgPath').innerHTML)
-    });
-  } else if (App.classList.contains('cart_view')) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_UserViews_CartView_js__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      AppURLs: props.AppURLs,
-      orderedMenus: JSON.parse(document.getElementById('orderedMenus').innerHTML),
-      quantity: JSON.parse(document.getElementById('quantity').innerHTML),
-      menusImgPath: JSON.parse(document.getElementById('menusImgPath').innerHTML)
-    });
-  }
-}
-
-/***/ }),
-
-/***/ "./resources/js/components/UserViews/AboutView.js":
-/*!********************************************************!*\
-  !*** ./resources/js/components/UserViews/AboutView.js ***!
-  \********************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return AboutView; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _reusables_Buttons_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../reusables/Buttons.js */ "./resources/js/components/reusables/Buttons.js");
-/* harmony import */ var _reusables_Sections_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../reusables/Sections.js */ "./resources/js/components/reusables/Sections.js");
-
-
-
-function AboutView(props) {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Sections_js__WEBPACK_IMPORTED_MODULE_2__["Navbar"], {
+  var UserNavbar = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Sections_js__WEBPACK_IMPORTED_MODULE_5__["Navbar"], {
     brandImg: props.AppURLs.icons + 'logo.png',
     navbarLinks: [{
       type: 'link',
@@ -66064,38 +66023,20 @@ function AboutView(props) {
         text: 'CONTACT'
       }
     }],
-    navbarActions: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    navbarActions: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      className: "btn",
+      href: '#'
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_SVGIcons_js__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      icon: 'telephone'
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
       className: "btn",
       href: props.AppURLs.domain + 'cart'
-    })
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("article", {
-    className: "section_padding"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-    className: "rows_container x_space_between section_1",
-    style: {
-      marginBottom: '8rem'
-    }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-    className: "heading"
-  }, "A History Has Written For Asahi Explore", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "highlightText"
-  }, "more Our Story")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "body"
-  }, "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    className: "img",
-    src: props.AppURLs.images + '1.jpg'
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-    className: "rows_container reverse x_space_between section_1"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-    className: "heading"
-  }, "A warm & Friendly Atmosphere With a ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "highlightText"
-  }, "event a suppor")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "body"
-  }, "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    className: "img",
-    src: props.AppURLs.images + '3.jpg'
-  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Sections_js__WEBPACK_IMPORTED_MODULE_2__["Footer"], {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_SVGIcons_js__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      icon: 'cart'
+    }))) //
+
+  });
+  var UserFooter = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Sections_js__WEBPACK_IMPORTED_MODULE_5__["Footer"], {
     sections: [{
       tag: 'section',
       heading: 'SITE MAP',
@@ -66193,7 +66134,170 @@ function AboutView(props) {
         }
       }]
     }]
-  })) //
+  });
+
+  if (App.classList.contains('landing_view')) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_UserViews_LandingView_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      AppURLs: props.AppURLs,
+      Navbar: UserNavbar,
+      Footer: UserFooter
+    });
+  } else if (App.classList.contains('about_view')) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_UserViews_AboutView_js__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      AppURLs: props.AppURLs,
+      Navbar: UserNavbar,
+      Footer: UserFooter
+    });
+  } else if (App.classList.contains('menus_view')) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_UserViews_MenusView_js__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      AppURLs: props.AppURLs,
+      Navbar: UserNavbar,
+      Footer: UserFooter,
+      menus: JSON.parse(document.getElementById('menus').innerHTML),
+      orderedMenus: JSON.parse(document.getElementById('orderedMenus').innerHTML),
+      menusImgPath: JSON.parse(document.getElementById('menusImgPath').innerHTML)
+    });
+  } else if (App.classList.contains('cart_view')) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_UserViews_CartView_js__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      AppURLs: props.AppURLs,
+      Navbar: UserNavbar,
+      Footer: UserFooter,
+      orderedMenus: JSON.parse(document.getElementById('orderedMenus').innerHTML),
+      quantity: JSON.parse(document.getElementById('quantity').innerHTML),
+      menusImgPath: JSON.parse(document.getElementById('menusImgPath').innerHTML)
+    });
+  }
+}
+/*
+Doyan burger atau sushi? Kalau dua-duanya, Anda wajib mencoba kreasi Burgushi. Ada sushi salmon mentai berbentuk burger yang puaskan selera.
+
+Hadir sejak 2017, nama Burgushi langsung mencuri perhatian para foodies. Restoran mungil di kawasan Panglima Polim ini mengawinkan burger dan sushi dalam sajian bernama 'Burgushi.'
+
+Varian sushi diubah bentuknya menjadi mirip burger. Mulai dari tuna salad, beef double, salmon mentai dan gyu-tan. Meski begitu, ada juga menu burger sungguhan. Semua dibanderol dalam harga relatif murah, Rp 30.000-45.000.
+
+Kami mencoba Salmon Mentai (Rp 45.000), Beef Wakame (Rp 35.000) dan Chicken Karaage (Rp 20.000) buatan Burgushi. Nampak pesanan dikemas rapih menggunakan kertas.
+
+Hanya saja pemakaian kertas membuat bentuk burger sushi Salmon Mentai sedikit berantakan saat sampai. Hal ini mungkin juga disebabkan perjalanan menggunakan motor mengingat kami memesannya via ojek online.
+
+Salmon Mentai menguarkan aroma gurih khas nori yang menggugah selera. Sushi ini dibuat kotak layaknya burger. Bun burger yang biasanya roti digantikan dengan rice katsu, adonan nasi yang dipadatkan lalu digoreng tepung layaknya katsu.
+
+Ada juga lembaran nori lebar yang menyelimuti permukaan luar Salmon Mentai. Sementara isiannya berupa sashimi salmon, irisan crabstick, timun Jepang dan mentai mayo dalam jumlah berlimpah.
+
+Rice katsu terasa empuk enak, hanya saja terlalu padat menurut kami. Kalaulah buliran nasinya tak terlalu padat sepertinya lebih enak. Soal isian, pencinta salmon mentai dijamin terpuaskan karena salmonnya lembut juicy dan terasa segar.
+
+Sementara itu paduan mentai mayo membuat burger ini jadi gurih dengan selingan renyah segar dari pemakaian timun Jepang. Porsi burger sushi yang cukup besar ini sukses bikin kenyang dan puas!
+
+Ingin mencoba burger asli, kami mencicip Beef Wakame. Roti burger yang empuk mengapit isian beef patty, wakame alias rumput laut, lelehan keju dan onion ring.
+
+Nyamm! Kami menyukai beef patty Burgushi yang punya rasa daging kuat. Teksturnya juga juicy dan tidak terlalu berserat. Tambahan irisan wakame memberi sentuhan rasa segar yang unik. Makin enak dipadu gurihnya lelehan keju. Menyantap satu buah burger ini juga mengenyangkan.
+
+Terakhir, ada Chicken Karaage yang cukup enak. Terdiri dari potongan ayam berbalut tepung yang cenderung tebal sehingga tidak renyah. Tekstur karaage juga terasa berminyak. Selain karaage, Burgushi masih punya pilihan menu Extras lain salmon skin, kentang goreng dan nori tempura.
+
+*/
+
+/*
+Pernah terbayang mencicipi burger dan sushi dalam satu gigitan? Burger yang sejatinya adalah western food dan sushi adalah Japanese food, dipadukan menjadi satu sehingga menghasilkan makanan yang lezat dan unik di Burgushi. Beda dari yang lain! Burger adalah roti lapis yang terdiri daging patty lezat berpadu dengan aneka sayuran dan saus. Sementara sushi adalah perpaduan antara daging ikan mentah dan nasi. 
+
+Mengapa burgushi? Nah, usut punya usut, yang membuat burgusi beda adalah penggunaan nasi yang digoreng seperti katsu renyah untuk mengganti roti yang biasanya digunakan di burger pada umumnya. Wih, unik dan beda nih dari yang lain. Burgushi memiliki 7 gerai nih di Jakarta. Penasaran dengan kreasi terbaru dalam dunia kuliner ini? Simak yuk artikel berikut.
+
+Burgushi kental dengan ciri khas sajian fusion food yang mengkombinasikan antara makanan khas Jepang yang lezat dan otentik, jadi punya ciri khas tersendiri yang melekat di hati seperti sushi berpadu dengan burger asal Amerika yang identik dengan sajian lezat dan praktis. Filosofi inilah yang mendasari hadirnya inovasi baru dalam dunia kuliner bernama burgushi. Cool! 
+
+Burgushi memiliki 7 gerai di Jakarta. Secara garis besar, dekorasi dan nuansanya hampir sama di setiap gerai. Ketika memasuki Burgushi, nuansa homey terasa sekali dengan penggunaan meja-meja kayu dan ornamen simple tapi menarik. Ada bantal-bantal kecil di beberapa spot kursi dan penggunaan lampu yang temaram, menambah nuansa yang artsy di Burgushi. 
+
+Burgushi merupakan kependekan dari burger dan sushi. Sesuai dengan namanya, menu unik ini cocok bagi para penggemar kedua makanan cepat saji paling terkenal di dunia itu. Menu pilihan Burgushi yang recommended adalah Double Beef Burgushi (Rp. 45.000) dan Salmon Mentai Burgushi (Rp. 45.000) dengan cita rasa khas Jepang yang lebih kental. 
+
+Kedua jenis Burgushi tersebut disajikan hangat-hangat dengan dibalut selembar nori yang membuat tampilan burger sekilas mirip dengan onigiri asal Jepang. Jika kamu lebih menyukai rasa khas Jepang, maka coba saja Salmon Mentai Burgushi yang terdiri dari isian cacahan salmon, crabstick, irisan mentimun, dan mentai mayo yang creamy. 
+
+Burgushi dibalut dengan nori. Agar nuansa ala Jepangnya tetap terasa. Sumber Detik Finance
+Terinspirasi dari salah satu jenis sushi paling populer, yaitu Salmon Mentai, Burgushi juga tidak mau ketinggalan, nih! Burgushi mengubah konsep tradisional sushi yang disajikan dengan menggulung daging salmon ke dalam nasi yang telah dimarinasi dengan rice vinegar saat proses pematangannya dan lembaran rumput laut alias nori. 
+
+Nah, berbeda nih dengan Double Beef Burgushi yang besar, Salmon Mentai Burgushi berukuran lebih kecil, sehingga mudah untuk digenggam. Umumnya jika memakan sushi, salmon akan disajikan dalam balutan nasi dan disiram dengan saus khusus. Nah, persis nih seperti Salmon Mentai Burgushi! Daging salmon dibumbui dengan saus mayones kemudian dibakar. Perfect!
+
+Untuk Double Beef Burgushi, daging yang menjadi isian burger sangat melimpah dan memiliki tekstur yang juicy. Bahkan, saat digigit, rasa daging yang juicy terasa banget dan membuat rasa Burgushi semakin lezat. Scramble egg yang lembut juga menambah cita rasanya. Ditambah dengan saus keju yang meleleh, perpaduan rasa gurih dan creamy serta tekstur crunchy dari rice katsu membuat kamu ketagihan.
+
+Kalau Double Beef Burgushi, rasanya cenderung ke western food dan Salmon Mentai Burgushi rasanya cenderung ke Japanese food. Untuk ukuran ‘burger’, porsi Burgushi terbilang cukup besar, sehingga membutuhkan alat bantu pisau dan garpu untuk menyantapnya. Burgushi menyediakan hidangan lain bernuansa Jepang.
+
+Nah, kalau ingin mencoba menu selain burgushi, kamu bisa mencoba Truffle Gyudon yang meruapakan semangkuk nasi ala Jepang dengan berbagai pilihan topping menggiurkan. Ada juga nih menu lain yaitu Karaage Curry Rice yang merupakan hidangan ayam goreng dengan nasi plus siraman saus kari. Semuanya hadir dengan sentuhan ala negeri matahari terbit tentunya. 
+
+Untuk varian burgusi lainnya ada burger tuna, yang disajikan dengan isian jamur enoki untuk menambah tingkat kerenyahan. Ada pula wagyu steak burger, dengan isian daging wagyu plus salah dressing wafu. Menu Burgushi yang paling favorit sejauh ini adalah Salmon Mentai, Beef Double, Beef Single, Chicken Spicy, Salmon Teriyaki, Beef Yakiniku, Tuna Salad, dan Chicken Nanpan. Menu-menu favorit ini dibanderol diantara Rp. 29.000 hingga Rp. 42.000. Harganya terjangkau dan nyaman di kantong, ya!
+
+Tidak usah bingung cara menyantap burgushi. Technically, cara menyantap burgushi mirip dengan cara menyantap burger. Pada gigitan pertama serasa menyantap sushi, bukan burger. Setelah isian burgushi dan mayonaise tergigit baru kesan sedang menyantap burger mengemuka. 
+
+Bagi kamu penggemar burger dan sushi, menu Burgushi ini memang solusi tepat yang all in one. Rasa burgernya kena, rasa sushinya juga mantap. Benar-benar perpaduan yang sempurna. Perfect balance!
+*/
+
+/***/ }),
+
+/***/ "./resources/js/components/UserViews/AboutView.js":
+/*!********************************************************!*\
+  !*** ./resources/js/components/UserViews/AboutView.js ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return AboutView; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _reusables_Buttons_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../reusables/Buttons.js */ "./resources/js/components/reusables/Buttons.js");
+
+
+function AboutView(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, props.Navbar, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("article", {
+    className: "section_padding"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    className: "heading dark"
+  }, "About ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "highlightText"
+  }, "Us")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+    className: "section_1 rows_container x_space_between",
+    style: {
+      marginBottom: '8rem'
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    className: "heading dark"
+  }, "A History Has Written For ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "highlightText"
+  }, "Nemoshi")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "body dark"
+  }, "Nemoshi offers the inherent characteristics of a fusion food that combines delicious and authentic Japanese specialties. It has its own inherent characteristics such as sushi combined with American burgers that are identical with delicious and practical dishes. This philosophy underlies the presence of new innovations in the culinary world called Nemoshi. Cool! ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Founded since 2017, the name Nemoshi immediately stole the attention of the foodies. This tiny restaurant in the Panglima Polim area marries burgers and sushi in a dish called 'Nemoshi.'     ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "img_grid"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "portrait",
+    src: props.AppURLs.images + 'asd.jpg'
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "square"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "img",
+    src: props.AppURLs.images + 'images.jpg'
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "img",
+    src: props.AppURLs.images + 'Roppongi.jpg'
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+    className: "section_1 rows_container reverse x_space_between"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    className: "heading dark"
+  }, "A warm & Friendly Atmosphere With a ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "highlightText"
+  }, "event a suppor")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "body dark"
+  }, "Burgushi memiliki 7 gerai di Jakarta. Secara garis besar, dekorasi dan nuansanya hampir sama di setiap gerai. Ketika memasuki Burgushi, nuansa homey terasa sekali dengan penggunaan meja-meja kayu dan ornamen simple tapi menarik. Ada bantal-bantal kecil di beberapa spot kursi dan penggunaan lampu yang temaram, menambah nuansa yang artsy di Burgushi.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "class": "img"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: props.AppURLs.images + '2.jpg'
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("article", {
+    id: "SpecialOffer",
+    className: "section_1 rows_container x_space_between section_padding"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    className: "heading light"
+  }, "We offer a bit less at ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "highlightText"
+  }, "Midday")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "body light"
+  }, "Founded since 2017, the name Nemoshi immediately stole the attention of the foodies. This tiny restaurant in the Panglima Polim area marries burgers and sushi in a dish called 'Nemoshi.'", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "img"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "30%", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Off")))), props.Footer) //
   ;
 }
 
@@ -66315,61 +66419,7 @@ var CartView = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Sections_js__WEBPACK_IMPORTED_MODULE_2__["Navbar"], {
-        brandImg: this.props.AppURLs.icons + 'logo.png',
-        navbarLinks: [{
-          type: 'link',
-          data: {
-            attr: {
-              href: this.props.AppURLs.domain
-            },
-            text: 'HOME'
-          }
-        }, {
-          type: 'link',
-          data: {
-            attr: {
-              href: this.props.AppURLs.domain + 'about'
-            },
-            text: 'ABOUT'
-          }
-        }, {
-          type: 'link',
-          data: {
-            attr: {
-              href: this.props.AppURLs.domain + 'menus'
-            },
-            text: 'OUR MENUS'
-          }
-        }, {
-          type: 'link',
-          data: {
-            attr: {
-              href: '#'
-            },
-            text: 'BLOG'
-          }
-        }, {
-          type: 'link',
-          data: {
-            attr: {
-              href: '#'
-            },
-            text: 'CONTACT'
-          }
-        }],
-        navbarActions: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Buttons_js__WEBPACK_IMPORTED_MODULE_1__["Button_1"], {
-          tag: 'a',
-          color: 'orange',
-          text: 'Your cart',
-          attr: {
-            style: {
-              fontSize: '1.65rem'
-            },
-            href: this.props.AppURLs.domain + 'cart'
-          }
-        })
-      }), this.state.cart.length !== 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, this.props.Navbar, this.state.cart.length !== 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "section_padding"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Your ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "highlightText"
@@ -66377,7 +66427,34 @@ var CartView = /*#__PURE__*/function (_React$Component) {
         cart: this.state.cart,
         addBtnFunc: this.toggleAddMenu,
         removeBtnFunc: this.toggleAddMenu
-      }))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("article", {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "section_padding rows_container x_center",
+        style: {
+          paddingTop: '6rem'
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Buttons_js__WEBPACK_IMPORTED_MODULE_1__["Button_1"], {
+        tag: 'a',
+        color: 'orange',
+        text: 'Order More',
+        attr: {
+          href: this.props.AppURLs.domain + 'menus',
+          style: {
+            display: 'block',
+            margin: '0 1rem'
+          }
+        }
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Buttons_js__WEBPACK_IMPORTED_MODULE_1__["Button_1"], {
+        tag: 'a',
+        color: 'orange_gradient',
+        text: 'Checkout',
+        attr: {
+          href: '#',
+          style: {
+            display: 'block',
+            margin: '0 1rem'
+          }
+        }
+      })))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("article", {
         style: {
           width: '100%',
           minHeight: '60vh',
@@ -66398,105 +66475,18 @@ var CartView = /*#__PURE__*/function (_React$Component) {
             marginTop: '2rem'
           }
         }
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Sections_js__WEBPACK_IMPORTED_MODULE_2__["Footer"], {
-        sections: [{
-          tag: 'section',
-          heading: 'SITE MAP',
-          bodies: [{
-            type: 'link',
-            text: 'Home',
-            attr: {
-              href: this.props.AppURLs.domain
-            }
-          }, {
-            type: 'link',
-            text: 'About',
-            attr: {
-              href: '#'
-            }
-          }, {
-            type: 'link',
-            text: 'Our Menus',
-            attr: {
-              href: this.props.AppURLs.domain + 'menus'
-            }
-          }, {
-            type: 'link',
-            text: 'Contact',
-            attr: {
-              href: '#'
-            }
-          }]
-        }, {
-          tag: 'address',
-          heading: 'ADDRESS',
-          bodies: [{
-            type: 'text',
-            tag: 'p',
-            text: "44 Canal Center Plaza #200, Alexandria, VA 22314, USA"
-          }, {
-            type: 'link',
-            text: 'Email: qwerty@gmail.com',
-            attr: {
-              href: 'mailto:qwerty@gmail.com'
-            }
-          }]
-        }, {
-          tag: 'section',
-          heading: 'OPENING HOURS',
-          bodies: [{
-            type: 'text',
-            tag: 'span',
-            text: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Monday:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "9.00 AM - 22.00 PM")),
-            attr: {
-              style: {
-                display: 'flex',
-                justifyContent: 'space-between'
-              }
-            }
-          }, {
-            type: 'text',
-            tag: 'span',
-            text: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Tuesday:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "9.00 AM - 22.00 PM")),
-            attr: {
-              style: {
-                display: 'flex',
-                justifyContent: 'space-between'
-              }
-            }
-          }, {
-            type: 'text',
-            tag: 'span',
-            text: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Wednesday:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "9.00 AM - 22.00 PM")),
-            attr: {
-              style: {
-                display: 'flex',
-                justifyContent: 'space-between'
-              }
-            }
-          }, {
-            type: 'text',
-            tag: 'span',
-            text: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Thursday:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "9.00 AM - 22.00 PM")),
-            attr: {
-              style: {
-                display: 'flex',
-                justifyContent: 'space-between'
-              }
-            }
-          }, {
-            type: 'text',
-            tag: 'span',
-            text: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Friday:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "9.00 AM - 22.00 PM")),
-            attr: {
-              style: {
-                display: 'flex',
-                justifyContent: 'space-between'
-              }
-            }
-          }]
-        }]
-      })) //
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("article", {
+        id: "SpecialOffer",
+        className: "section_1 rows_container x_space_between section_padding"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+        className: "heading light"
+      }, "We offer a bit less at ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "highlightText"
+      }, "Midday")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "body light"
+      }, "Founded since 2017, the name Nemoshi immediately stole the attention of the foodies. This tiny restaurant in the Panglima Polim area marries burgers and sushi in a dish called 'Nemoshi.'", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "img"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "30%", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Off")))), this.props.Footer) //
       ;
     }
   }]);
@@ -66526,177 +66516,60 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function LandingView(props) {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Sections_js__WEBPACK_IMPORTED_MODULE_2__["Navbar"], {
-    brandImg: props.AppURLs.icons + 'logo.png',
-    navbarLinks: [{
-      type: 'link',
-      data: {
-        attr: {
-          href: props.AppURLs.domain
-        },
-        text: 'HOME'
-      }
-    }, {
-      type: 'link',
-      data: {
-        attr: {
-          href: props.AppURLs.domain + 'about'
-        },
-        text: 'ABOUT'
-      }
-    }, {
-      type: 'link',
-      data: {
-        attr: {
-          href: props.AppURLs.domain + 'menus'
-        },
-        text: 'OUR MENUS'
-      }
-    }, {
-      type: 'link',
-      data: {
-        attr: {
-          href: '#'
-        },
-        text: 'BLOG'
-      }
-    }, {
-      type: 'link',
-      data: {
-        attr: {
-          href: '#'
-        },
-        text: 'CONTACT'
-      }
-    }],
-    navbarActions: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-      className: "btn",
-      href: props.AppURLs.domain + 'cart'
-    })
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, props.Navbar, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "cols_container x_center y_left head_section section_padding"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-    className: "heading"
+    className: "heading light"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "highlightText",
     style: {
       fontSize: '2.6rem',
       display: 'block'
     }
-  }, "Welcome to Asahi"), "Good food is to be ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+  }, "Welcome to Nemoshi"), "Good food is to be ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "highlightText"
   }, "enjoyed"), " food very beautiful in itse"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "body"
-  }, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Quis.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("article", {
-    className: "rows_container x_space_between section_padding section_1"
+    className: "body light"
+  }, "We delivers special meals combining japanese sushi and western burgers. Nemoshi is the right solution for you, fans of burgers and sushi!.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("article", {
+    className: "section_1 rows_container x_space_between section_padding"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-    className: "heading"
-  }, "A History Has Written For Asahi Explore", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "heading dark"
+  }, "A History Has Written For ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "highlightText"
-  }, "more Our Story")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "body"
-  }, "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+  }, "Nemoshi")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "body dark"
+  }, "Founded since 2017, the name Nemoshi immediately stole the attention of the foodies. This tiny restaurant in the Panglima Polim area marries burgers and sushi in a dish called 'Nemoshi.'", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Buttons_js__WEBPACK_IMPORTED_MODULE_1__["Button_1"], {
+    tag: 'a',
+    color: 'orange_gradient',
+    text: 'Read More',
+    attr: {
+      href: props.AppURLs.domain + 'about'
+    }
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "img_grid"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "portrait",
+    src: props.AppURLs.images + 'asd.jpg'
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "square"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     className: "img",
-    src: props.AppURLs.images + '2.jpg'
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Sections_js__WEBPACK_IMPORTED_MODULE_2__["Footer"], {
-    sections: [{
-      tag: 'section',
-      heading: 'SITE MAP',
-      bodies: [{
-        type: 'link',
-        text: 'Home',
-        attr: {
-          href: props.AppURLs.domain
-        }
-      }, {
-        type: 'link',
-        text: 'About',
-        attr: {
-          href: '#'
-        }
-      }, {
-        type: 'link',
-        text: 'Our Menus',
-        attr: {
-          href: props.AppURLs.domain + 'menus'
-        }
-      }, {
-        type: 'link',
-        text: 'Contact',
-        attr: {
-          href: '#'
-        }
-      }]
-    }, {
-      tag: 'address',
-      heading: 'ADDRESS',
-      bodies: [{
-        type: 'text',
-        tag: 'p',
-        text: "44 Canal Center Plaza #200, Alexandria, VA 22314, USA"
-      }, {
-        type: 'link',
-        text: 'Email: qwerty@gmail.com',
-        attr: {
-          href: 'mailto:qwerty@gmail.com'
-        }
-      }]
-    }, {
-      tag: 'section',
-      heading: 'OPENING HOURS',
-      bodies: [{
-        type: 'text',
-        tag: 'span',
-        text: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Monday:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "9.00 AM - 22.00 PM")),
-        attr: {
-          style: {
-            display: 'flex',
-            justifyContent: 'space-between'
-          }
-        }
-      }, {
-        type: 'text',
-        tag: 'span',
-        text: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Tuesday:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "9.00 AM - 22.00 PM")),
-        attr: {
-          style: {
-            display: 'flex',
-            justifyContent: 'space-between'
-          }
-        }
-      }, {
-        type: 'text',
-        tag: 'span',
-        text: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Wednesday:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "9.00 AM - 22.00 PM")),
-        attr: {
-          style: {
-            display: 'flex',
-            justifyContent: 'space-between'
-          }
-        }
-      }, {
-        type: 'text',
-        tag: 'span',
-        text: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Thursday:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "9.00 AM - 22.00 PM")),
-        attr: {
-          style: {
-            display: 'flex',
-            justifyContent: 'space-between'
-          }
-        }
-      }, {
-        type: 'text',
-        tag: 'span',
-        text: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Friday:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "9.00 AM - 22.00 PM")),
-        attr: {
-          style: {
-            display: 'flex',
-            justifyContent: 'space-between'
-          }
-        }
-      }]
-    }]
-  })) //
+    src: props.AppURLs.images + 'images.jpg'
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "img",
+    src: props.AppURLs.images + 'Roppongi.jpg'
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("article", {
+    id: "SpecialOffer",
+    className: "section_1 rows_container x_space_between section_padding"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    className: "heading light"
+  }, "We offer a bit less at ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "highlightText"
+  }, "Midday")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "body light"
+  }, "Founded since 2017, the name Nemoshi immediately stole the attention of the foodies. This tiny restaurant in the Panglima Polim area marries burgers and sushi in a dish called 'Nemoshi.'", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "img"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "30%", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Off")))), props.Footer) //
   ;
 }
 
@@ -66715,8 +66588,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _reusables_Buttons_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../reusables/Buttons.js */ "./resources/js/components/reusables/Buttons.js");
-/* harmony import */ var _reusables_Sections_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../reusables/Sections.js */ "./resources/js/components/reusables/Sections.js");
-/* harmony import */ var _reusables_AJAXRequest_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../reusables/AJAXRequest.js */ "./resources/js/components/reusables/AJAXRequest.js");
+/* harmony import */ var _reusables_SVGIcons_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../reusables/SVGIcons.js */ "./resources/js/components/reusables/SVGIcons.js");
+/* harmony import */ var _reusables_Sections_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../reusables/Sections.js */ "./resources/js/components/reusables/Sections.js");
+/* harmony import */ var _reusables_AJAXRequest_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../reusables/AJAXRequest.js */ "./resources/js/components/reusables/AJAXRequest.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -66738,6 +66612,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
 
 
 
@@ -66813,165 +66688,31 @@ var MenusView = /*#__PURE__*/function (_React$Component) {
         };
       }
 
-      Object(_reusables_AJAXRequest_js__WEBPACK_IMPORTED_MODULE_3__["AJAXPostRequest"])('menu_id=' + menu_id + '&action=' + action, this.props.AppURLs.toggleAddMenuURL, AJAXCallback, this);
+      Object(_reusables_AJAXRequest_js__WEBPACK_IMPORTED_MODULE_4__["AJAXPostRequest"])('menu_id=' + menu_id + '&action=' + action, this.props.AppURLs.toggleAddMenuURL, AJAXCallback, this);
     }
   }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Sections_js__WEBPACK_IMPORTED_MODULE_2__["Navbar"], {
-        brandImg: this.props.AppURLs.icons + 'logo.png',
-        navbarLinks: [{
-          type: 'link',
-          data: {
-            attr: {
-              href: this.props.AppURLs.domain
-            },
-            text: 'HOME'
-          }
-        }, {
-          type: 'link',
-          data: {
-            attr: {
-              href: this.props.AppURLs.domain + 'about'
-            },
-            text: 'ABOUT'
-          }
-        }, {
-          type: 'link',
-          data: {
-            attr: {
-              href: this.props.AppURLs.domain + 'menus'
-            },
-            text: 'OUR MENUS'
-          }
-        }, {
-          type: 'link',
-          data: {
-            attr: {
-              href: '#'
-            },
-            text: 'BLOG'
-          }
-        }, {
-          type: 'link',
-          data: {
-            attr: {
-              href: '#'
-            },
-            text: 'CONTACT'
-          }
-        }],
-        navbarActions: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          className: "btn",
-          href: this.props.AppURLs.domain + 'cart'
-        })
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, this.props.Navbar, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "section_padding"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Our ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "highlightText"
-      }, "Menus")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Sections_js__WEBPACK_IMPORTED_MODULE_2__["MenuGrid"], {
+      }, "Menus")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Sections_js__WEBPACK_IMPORTED_MODULE_3__["MenuGrid"], {
         menus: this.state.menus,
         addBtnFunc: this.toggleAddMenu,
         removeBtnFunc: this.toggleAddMenu
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reusables_Sections_js__WEBPACK_IMPORTED_MODULE_2__["Footer"], {
-        sections: [{
-          tag: 'section',
-          heading: 'SITE MAP',
-          bodies: [{
-            type: 'link',
-            text: 'Home',
-            attr: {
-              href: this.props.AppURLs.domain
-            }
-          }, {
-            type: 'link',
-            text: 'About',
-            attr: {
-              href: '#'
-            }
-          }, {
-            type: 'link',
-            text: 'Our Menus',
-            attr: {
-              href: this.props.AppURLs.domain + 'menus'
-            }
-          }, {
-            type: 'link',
-            text: 'Contact',
-            attr: {
-              href: '#'
-            }
-          }]
-        }, {
-          tag: 'address',
-          heading: 'ADDRESS',
-          bodies: [{
-            type: 'text',
-            tag: 'p',
-            text: "44 Canal Center Plaza #200, Alexandria, VA 22314, USA"
-          }, {
-            type: 'link',
-            text: 'Email: qwerty@gmail.com',
-            attr: {
-              href: 'mailto:qwerty@gmail.com'
-            }
-          }]
-        }, {
-          tag: 'section',
-          heading: 'OPENING HOURS',
-          bodies: [{
-            type: 'text',
-            tag: 'span',
-            text: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Monday:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "9.00 AM - 22.00 PM")),
-            attr: {
-              style: {
-                display: 'flex',
-                justifyContent: 'space-between'
-              }
-            }
-          }, {
-            type: 'text',
-            tag: 'span',
-            text: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Tuesday:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "9.00 AM - 22.00 PM")),
-            attr: {
-              style: {
-                display: 'flex',
-                justifyContent: 'space-between'
-              }
-            }
-          }, {
-            type: 'text',
-            tag: 'span',
-            text: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Wednesday:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "9.00 AM - 22.00 PM")),
-            attr: {
-              style: {
-                display: 'flex',
-                justifyContent: 'space-between'
-              }
-            }
-          }, {
-            type: 'text',
-            tag: 'span',
-            text: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Thursday:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "9.00 AM - 22.00 PM")),
-            attr: {
-              style: {
-                display: 'flex',
-                justifyContent: 'space-between'
-              }
-            }
-          }, {
-            type: 'text',
-            tag: 'span',
-            text: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Friday:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "9.00 AM - 22.00 PM")),
-            attr: {
-              style: {
-                display: 'flex',
-                justifyContent: 'space-between'
-              }
-            }
-          }]
-        }]
-      })) //			
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("article", {
+        id: "SpecialOffer",
+        className: "section_1 rows_container x_space_between section_padding"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+        className: "heading light"
+      }, "We offer a bit less at ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "highlightText"
+      }, "Midday")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "body light"
+      }, "Founded since 2017, the name Nemoshi immediately stole the attention of the foodies. This tiny restaurant in the Panglima Polim area marries burgers and sushi in a dish called 'Nemoshi.'", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "img"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "30%", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Off")))), this.props.Footer) //			
       ;
     }
   }]);
@@ -67104,6 +66845,60 @@ function LARAVEL_CSRF_TOKEN(props) {
 }
 function test(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "asds");
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/reusables/SVGIcons.js":
+/*!*******************************************************!*\
+  !*** ./resources/js/components/reusables/SVGIcons.js ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return SVGIcons; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+function SVGIcons(props) {
+  switch (props.icon) {
+    case 'telephone':
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+        xmlns: "http://www.w3.org/2000/svg",
+        viewBox: "0 0 80 80"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", null, "telephone"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+        id: "Layer_2",
+        "data-name": "Layer 2"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+        id: "Layer_1-2",
+        "data-name": "Layer 1"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+        d: "M15.94,0A8.75,8.75,0,0,0,9.75,3l-7,8C.51,13.56,0,16.89,0,20,0,30.59,7.28,45.5,20.88,59.1S49.41,80,60,80c3.12,0,6.41-.51,9-2.75l8-7a8.78,8.78,0,0,0,3-6.19,8.49,8.49,0,0,0-2.87-6.18l-11-11A8.89,8.89,0,0,0,60,44a8.78,8.78,0,0,0-6.12,2.88l-4,3.93c-.65.58-1,.8-1.22.63L28.56,31.31c-.27-.41.15-.74.39-1,.05-.07,4.18-4.2,4.18-4.2A8.78,8.78,0,0,0,36,20a8.88,8.88,0,0,0-2.87-6.12l-11-11A8.51,8.51,0,0,0,15.94,0Zm1.94,7.1,11,11A2.74,2.74,0,0,1,30.06,20a2.8,2.8,0,0,1-1.18,1.85l-4.23,4.23a6.71,6.71,0,0,0-.77,9l21,21c2.79,2.21,6.45,1.49,8.83-.58l4.42-4.42A2.7,2.7,0,0,1,60,50a3,3,0,0,1,1.88,1.1l11,11c1.65,1.7,1.33,2.87.15,3.62l-8,7A8.44,8.44,0,0,1,60,74c-7.58,0-22.13-6.38-34.87-19.12S6,27.58,6,20a8.57,8.57,0,0,1,1.25-5l7-8C15.49,5.46,16.63,5.87,17.88,7.1Z"
+      }))))) //
+      ;
+      break;
+
+    case 'cart':
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+        xmlns: "http://www.w3.org/2000/svg",
+        viewBox: "0 0 90 82"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", null, "cart"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+        id: "Layer_2",
+        "data-name": "Layer 2"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+        id: "Layer_1-2",
+        "data-name": "Layer 1"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+        d: "M3,0A3,3,0,0,0,3,6h9.57L22.88,54.66C23.29,56.49,24.49,58,26,58H76a3,3,0,1,0,0-6H28.45l-1.28-6H80a3.1,3.1,0,0,0,2.91-2.34l7-30A3.14,3.14,0,0,0,87,10H19.57L17.94,2.38A3.08,3.08,0,0,0,15,0ZM20.82,16H36.45L38,25H22.73Zm21.76,0H61.46L60,25H44.08Zm25,0H83.25l-2.1,9H66.09ZM24,31H39l1.5,9H25.92Zm21.07,0H59l-1.5,9H46.58Zm20,0H79.75l-2.1,9H63.59ZM37,62A10,10,0,1,0,47,72,10,10,0,0,0,37,62Zm28,0A10,10,0,1,0,75,72,10,10,0,0,0,65,62ZM37,68a4,4,0,1,1-4,4A4,4,0,0,1,37,68Zm28,0a4,4,0,1,1-4,4A4,4,0,0,1,65,68Z"
+      }))))) //
+      ;
+      break;
+
+    default:
+      return '';
+  }
 }
 
 /***/ }),
@@ -67366,7 +67161,7 @@ var Footer = /*#__PURE__*/function (_React$Component2) {
     key: "createLink",
     value: function createLink(text, attr, events, key) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", _extends({
-        className: "link"
+        className: "link light"
       }, attr, events, {
         key: key
       }), text); //
@@ -67376,7 +67171,7 @@ var Footer = /*#__PURE__*/function (_React$Component2) {
     value: function createParagraph(tag, text, attr, key) {
       var Tag = tag;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Tag, _extends({
-        className: "text"
+        className: "text body light"
       }, attr, {
         key: key
       }), text); //
@@ -67391,7 +67186,7 @@ var Footer = /*#__PURE__*/function (_React$Component2) {
         className: "section",
         key: key
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", {
-        className: "heading"
+        className: "heading light"
       }, heading), bodies.map(function (body, key) {
         switch (body.type) {
           case 'text':
@@ -67436,7 +67231,7 @@ var Footer = /*#__PURE__*/function (_React$Component2) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\asahi_food\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\nemoshi\resources\js\app.js */"./resources/js/app.js");
 
 
 /***/ })

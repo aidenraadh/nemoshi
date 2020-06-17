@@ -1,149 +1,75 @@
 import React from 'react';
 import {Button_1} from './../reusables/Buttons.js'
-import {Navbar, Footer} from './../reusables/Sections.js'
 
 export default function AboutView(props){
 	return (
 		<>
-		<Navbar
-			brandImg = {props.AppURLs.icons+'logo.png'}
-			navbarLinks = {[
-				{type: 'link', data:{
-					attr: {href: props.AppURLs.domain}, text: 'HOME'
-				}},
-				{type: 'link', data:{
-					attr: {href: props.AppURLs.domain+'about'}, text: 'ABOUT'
-				}},				
-				{type: 'link', data:{
-					attr: {href: props.AppURLs.domain+'menus'}, text: 'OUR MENUS'
-				}},
-				{type: 'link', data:{
-					attr: {href: '#'}, text: 'BLOG'
-				}},
-				{type: 'link', data:{
-					attr: {href: '#'}, text: 'CONTACT'
-				}},				
-			]}
-			navbarActions = {
-				<a className="btn" href={props.AppURLs.domain+'cart'}></a>
-			}
-		/>
+		{props.Navbar}
 
 		<article className="section_padding">
-			<section className="rows_container x_space_between section_1" style={{marginBottom: '8rem'}}>
+			<h1 className="heading dark">About <span className="highlightText">Us</span></h1>
+			<section className="section_1 rows_container x_space_between" style={{marginBottom: '8rem'}}>
 				<div>
-					<h2 className="heading">
-						A History Has Written For Asahi Explore 
-						<span className="highlightText">more Our Story</span>
+					<h2 className="heading dark">
+						A History Has Written For <span className="highlightText">Nemoshi</span>
 					</h2>
-					<p className="body">
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-	
-					</p>
+					<p className="body dark">
+						Nemoshi offers the inherent characteristics of a fusion food that combines 
+						delicious and authentic Japanese specialties. It has its own inherent 
+						characteristics such as sushi combined with American burgers 
+						that are identical with delicious and practical dishes. This philosophy underlies 
+						the presence of new innovations in the culinary world called Nemoshi. Cool! <br /><br />
+						Founded since 2017, the name Nemoshi immediately stole the attention of the foodies. 
+						This tiny restaurant in the Panglima Polim area marries burgers and sushi in a dish 
+						called 'Nemoshi.'					</p>
 				</div>
-				<img className="img" src={props.AppURLs.images+'1.jpg'} />
+				<div className="img_grid">
+					<img className="portrait" src={props.AppURLs.images+'asd.jpg'} />
+					<div className="square">
+						<img className="img" src={props.AppURLs.images+'images.jpg'} />
+						<img className="img" src={props.AppURLs.images+'Roppongi.jpg'} />
+					</div>
+				</div>
 			</section>
-			<section className="rows_container reverse x_space_between section_1">
+			<section className="section_1 rows_container reverse x_space_between">
 				<div>
-					<h2 className="heading">
+					<h2 className="heading dark">
 						A warm & Friendly Atmosphere With a <span className="highlightText">event a suppor</span>
 					</h2>
-					<p className="body">
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-	
+					<p className="body dark">
+						Burgushi memiliki 7 gerai di Jakarta. Secara garis besar, dekorasi dan nuansanya 
+						hampir sama di setiap gerai. Ketika memasuki Burgushi, nuansa homey terasa sekali 
+						dengan penggunaan meja-meja kayu dan ornamen simple tapi menarik. 
+						Ada bantal-bantal kecil di beberapa spot kursi dan penggunaan lampu yang temaram, 
+						menambah nuansa yang artsy di Burgushi. 					
 					</p>
 				</div>
-				<img className="img" src={props.AppURLs.images+'3.jpg'} />
+				<div class="img">
+					<img src={props.AppURLs.images+'2.jpg'} />
+				</div>
 			</section>			
-		</article>	
+		</article>
 
-		<Footer
-			sections = {[
-				{
-					tag: 'section',
-					heading: 'SITE MAP',
-					bodies: [
-						{type: 'link', text: 'Home', attr: {href: props.AppURLs.domain}},
-						{type: 'link', text: 'About', attr: {href: '#'}},
-						{type: 'link', text: 'Our Menus', attr: {href: props.AppURLs.domain+'menus'}},
-						{type: 'link', text: 'Contact', attr: {href: '#'}},
-					]
-				},
-				{
-					tag: 'address',
-					heading: 'ADDRESS',
-					bodies: [
-						{
-							type: 'text',
-							tag: 'p',
-							text: "44 Canal Center Plaza #200, Alexandria, VA 22314, USA",
-						},
-						{type: 'link', text: 'Email: qwerty@gmail.com', attr: {href: 'mailto:qwerty@gmail.com'}},
-					]
-				},
-				{
-					tag: 'section',
-					heading: 'OPENING HOURS',
-					bodies: [
-						{
-							type: 'text',
-							tag: 'span',
-							text: (<>
-								<span>Monday:</span>
-								<span>9.00 AM - 22.00 PM</span>
-							</>),
-							attr: {style: {display: 'flex', justifyContent: 'space-between'}}
-						},
-						{
-							type: 'text',
-							tag: 'span',
-							text: (<>
-								<span>Tuesday:</span>
-								<span>9.00 AM - 22.00 PM</span>
-							</>),
-							attr: {style: {display: 'flex', justifyContent: 'space-between'}}
-						},
-						{
-							type: 'text',
-							tag: 'span',
-							text: (<>
-								<span>Wednesday:</span>
-								<span>9.00 AM - 22.00 PM</span>
-							</>),
-							attr: {style: {display: 'flex', justifyContent: 'space-between'}}
-						},
-						{
-							type: 'text',
-							tag: 'span',
-							text: (<>
-								<span>Thursday:</span>
-								<span>9.00 AM - 22.00 PM</span>
-							</>),
-							attr: {style: {display: 'flex', justifyContent: 'space-between'}}
-						},
-						{
-							type: 'text',
-							tag: 'span',
-							text: (<>
-								<span>Friday:</span>
-								<span>9.00 AM - 22.00 PM</span>
-							</>),
-							attr: {style: {display: 'flex', justifyContent: 'space-between'}}
-						},																								
-					]
-				},				
-			]}
-		/>
+		<article id="SpecialOffer" className="section_1 rows_container x_space_between section_padding">
+			<div>
+				<h2 className="heading light">
+					We offer a bit less at <span className="highlightText">Midday</span>
+				</h2>
+				<p className="body light">
+					Founded since 2017, the name Nemoshi immediately stole the attention of the foodies. 
+					This tiny restaurant in the Panglima Polim area marries burgers and sushi in a dish 
+					called 'Nemoshi.'<br/> <br/>
+				</p>
+			</div>
+			<div className="img">
+				<span>
+					<span>30%<br/>Off</span>				
+				</span>
+			</div>
+		</article>		
+
+		{props.Footer}
+
 		</>//
 	);
 }

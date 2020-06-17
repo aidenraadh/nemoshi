@@ -1,6 +1,6 @@
 import React from 'react';
 import {Button_1} from './../reusables/Buttons.js';
-import {Navbar,Cart, Footer} from './../reusables/Sections.js';
+import {Cart} from './../reusables/Sections.js';
 import {AJAXPostRequest} from './../reusables/AJAXRequest.js';
 
 export default class CartView extends React.Component{
@@ -71,39 +71,8 @@ export default class CartView extends React.Component{
 	render(){
 		return (
 			<>
-			<Navbar
-				brandImg = {this.props.AppURLs.icons+'logo.png'}
-				navbarLinks = {[
-					{type: 'link', data:{
-						attr: {href: this.props.AppURLs.domain}, text: 'HOME'
-					}},
-					{type: 'link', data:{
-						attr: {href: this.props.AppURLs.domain+'about'}, text: 'ABOUT'
-					}},				
-					{type: 'link', data:{
-						attr: {href: this.props.AppURLs.domain+'menus'}, text: 'OUR MENUS'
-					}},
-					{type: 'link', data:{
-						attr: {href: '#'}, text: 'BLOG'
-					}},
-					{type: 'link', data:{
-						attr: {href: '#'}, text: 'CONTACT'
-					}},				
-				]}
-				navbarActions = {
-					<Button_1
-						tag = {'a'}
-						color = {'orange'}
-						text = {'Your cart'}
-						attr = {
-							{
-								style: {fontSize: '1.65rem'},
-								href: this.props.AppURLs.domain+'cart',
-							}
-						}
-					/>
-				}
-			/>
+			{this.props.Navbar}
+			
 			{(this.state.cart.length !== 0 ?
 			<>
 			<div className="section_padding">
@@ -112,7 +81,19 @@ export default class CartView extends React.Component{
 					cart = {this.state.cart}
 					addBtnFunc = {this.toggleAddMenu}
 					removeBtnFunc = {this.toggleAddMenu}
-				/>				
+				/>
+				<div className="section_padding rows_container x_center" style={{paddingTop: '6rem'}}>
+					<Button_1
+						tag = {'a'} color = {'orange'}
+						text = {'Order More'}
+						attr = {{href: this.props.AppURLs.domain+'menus', style: {display: 'block', margin: '0 1rem'}}}
+					/>				
+					<Button_1
+						tag = {'a'} color = {'orange_gradient'}
+						text = {'Checkout'}
+						attr = {{href: '#', style: {display: 'block', margin: '0 1rem'}}}
+					/>					
+				</div>	
 			</div>
 			</> :
 			<article style={{width: '100%', minHeight: '60vh',
@@ -130,83 +111,25 @@ export default class CartView extends React.Component{
 
 			)}
 
-			<Footer
-				sections = {[
-					{
-						tag: 'section',
-						heading: 'SITE MAP',
-						bodies: [
-							{type: 'link', text: 'Home', attr: {href: this.props.AppURLs.domain}},
-							{type: 'link', text: 'About', attr: {href: '#'}},
-							{type: 'link', text: 'Our Menus', attr: {href: this.props.AppURLs.domain+'menus'}},
-							{type: 'link', text: 'Contact', attr: {href: '#'}},
-						]
-					},
-					{
-						tag: 'address',
-						heading: 'ADDRESS',
-						bodies: [
-							{
-								type: 'text',
-								tag: 'p',
-								text: "44 Canal Center Plaza #200, Alexandria, VA 22314, USA",
-							},
-							{type: 'link', text: 'Email: qwerty@gmail.com', attr: {href: 'mailto:qwerty@gmail.com'}},
-						]
-					},
-					{
-						tag: 'section',
-						heading: 'OPENING HOURS',
-						bodies: [
-							{
-								type: 'text',
-								tag: 'span',
-								text: (<>
-									<span>Monday:</span>
-									<span>9.00 AM - 22.00 PM</span>
-								</>),
-								attr: {style: {display: 'flex', justifyContent: 'space-between'}}
-							},
-							{
-								type: 'text',
-								tag: 'span',
-								text: (<>
-									<span>Tuesday:</span>
-									<span>9.00 AM - 22.00 PM</span>
-								</>),
-								attr: {style: {display: 'flex', justifyContent: 'space-between'}}
-							},
-							{
-								type: 'text',
-								tag: 'span',
-								text: (<>
-									<span>Wednesday:</span>
-									<span>9.00 AM - 22.00 PM</span>
-								</>),
-								attr: {style: {display: 'flex', justifyContent: 'space-between'}}
-							},
-							{
-								type: 'text',
-								tag: 'span',
-								text: (<>
-									<span>Thursday:</span>
-									<span>9.00 AM - 22.00 PM</span>
-								</>),
-								attr: {style: {display: 'flex', justifyContent: 'space-between'}}
-							},
-							{
-								type: 'text',
-								tag: 'span',
-								text: (<>
-									<span>Friday:</span>
-									<span>9.00 AM - 22.00 PM</span>
-								</>),
-								attr: {style: {display: 'flex', justifyContent: 'space-between'}}
-							},																								
-						]
-					},				
-				]}
-			/>
+			<article id="SpecialOffer" className="section_1 rows_container x_space_between section_padding">
+				<div>
+					<h2 className="heading light">
+						We offer a bit less at <span className="highlightText">Midday</span>
+					</h2>
+					<p className="body light">
+						Founded since 2017, the name Nemoshi immediately stole the attention of the foodies. 
+						This tiny restaurant in the Panglima Polim area marries burgers and sushi in a dish 
+						called 'Nemoshi.'<br/> <br/>
+					</p>
+				</div>
+				<div className="img">
+					<span>
+						<span>30%<br/>Off</span>				
+					</span>
+				</div>
+			</article>			
+
+			{this.props.Footer}
 
 			</>//
 		);

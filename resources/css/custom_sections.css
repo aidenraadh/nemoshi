@@ -1,0 +1,60 @@
+#UserApp.landing_view .head_section{
+	background: linear-gradient(
+        rgba(0, 0, 0, 0.3), 
+		rgba(0, 0, 0, 0.3)
+        ), url('../images/bg_1.jpg') no-repeat scroll 0 0;
+	background-size: cover;
+}
+
+#UserApp #SpecialOffer{
+	align-items: center;
+	background: linear-gradient(
+        rgba(0, 0, 0, 0.3), 
+		rgba(0, 0, 0, 0.3)
+        ), url('../images/bg_2.jpg') no-repeat scroll 0 0;
+	background-size: cover;	
+}
+
+#UserApp #SpecialOffer .img > span{
+	padding: 1.6rem;
+	border: 0.2rem dashed #f16d07;
+	border-radius: 100%;
+}
+
+#UserApp #SpecialOffer .img > span > span{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 22rem; height: 22rem;
+	background: linear-gradient(to right, #eb883b, #f26900);
+	border-radius: 100%;
+	font-family: 'Barlow', sans-serif;
+	font-size: 4rem;
+	text-align: center;
+	color: #FFFFFF;	
+}
+
+#UserApp.about_view h1{
+	width: 100%;
+	font-size: 4rem;
+	text-align: center;
+	margin-bottom: 3rem;
+}
+
+#UserApp.menus_view h1{
+	width: 100%;
+	margin-bottom: 3rem;
+	font-family: 'Lobster Two', sans-serif;
+	font-size: 3rem;
+	text-align: center;
+	color: #363636;
+}
+
+#UserApp.cart_view h1{
+	width: 100%;
+	margin-bottom: 3rem;
+	font-family: 'Lobster Two', sans-serif;
+	font-size: 3rem;
+	text-align: center;
+	color: #363636;
+}
